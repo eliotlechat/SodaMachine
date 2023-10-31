@@ -667,6 +667,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   source: {fileID: 433855320}
   clip: {fileID: 8300000, guid: cda909a0f0699944a83f7ec141c4da7d, type: 3}
+  canettes:
+  - {fileID: 1853640564}
+  - {fileID: 1853720204}
+  - {fileID: 737946998}
+  - {fileID: 1304214872}
+  speed: 1
 --- !u!82 &433855320
 AudioSource:
   m_ObjectHideFlags: 0
@@ -798,6 +804,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   source: {fileID: 663617282}
   clip: {fileID: 8300000, guid: dba538a2dde671447b021ae6784e571f, type: 3}
+  canettes: []
+  speed: 1
 --- !u!82 &663617282
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1089,7 +1097,7 @@ GameObject:
   - component: {fileID: 737947000}
   - component: {fileID: 737946999}
   m_Layer: 0
-  m_Name: can (2)
+  m_Name: coca_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1107,7 +1115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3db42445f3622549a7c02712c8c44c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.1
+  speed: 1
   delay: 2
   canMove: 0
 --- !u!54 &737947000
@@ -1345,7 +1353,7 @@ GameObject:
   - component: {fileID: 1304214874}
   - component: {fileID: 1304214873}
   m_Layer: 0
-  m_Name: can (3)
+  m_Name: coca_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1363,7 +1371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3db42445f3622549a7c02712c8c44c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.1
+  speed: 1
   delay: 2
   canMove: 0
 --- !u!54 &1304214874
@@ -1496,7 +1504,7 @@ GameObject:
   - component: {fileID: 1853640565}
   - component: {fileID: 1853640570}
   m_Layer: 0
-  m_Name: can
+  m_Name: coca_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1629,7 +1637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3db42445f3622549a7c02712c8c44c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.1
+  speed: 1
   delay: 2
   canMove: 0
 --- !u!1 &1853720204
@@ -1647,7 +1655,7 @@ GameObject:
   - component: {fileID: 1853720206}
   - component: {fileID: 1853720205}
   m_Layer: 0
-  m_Name: can (1)
+  m_Name: coca_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1665,7 +1673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3db42445f3622549a7c02712c8c44c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.1
+  speed: 1
   delay: 2
   canMove: 0
 --- !u!54 &1853720206
