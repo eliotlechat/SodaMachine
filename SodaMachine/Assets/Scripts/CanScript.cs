@@ -21,7 +21,7 @@ public class CanScript : MonoBehaviour
         {
             ButtonBehaviorScript.isCanDropping = false;
             buttonBehaviorScript.canBeExecuted = true;
-            Debug.Log(gameObject.name + " est tombé");
+            Debug.Log(gameObject.name + " est tombé dans le collecteur de boisson");
             GetComponent<AudioSource>().PlayOneShot(fallSound);
             StartCoroutine(ResetCan());
         }

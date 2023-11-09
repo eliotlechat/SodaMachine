@@ -6,6 +6,14 @@ public class Shoot : MonoBehaviour
 {
     private Ray ray;
     public RaycastHit hit;
+    GameObject canAnimated;
+    GameObject player;
+
+    private void Start()
+    {
+        canAnimated = GameObject.Find("cocaCanAnimated");
+        player = GameObject.Find("Player");
+    }
 
     void Update()
     {
@@ -24,23 +32,25 @@ public class Shoot : MonoBehaviour
             {
 
                 ButtonBehaviorScript buttonScript = hit.transform.GetComponent<ButtonBehaviorScript>();
-                CollectingTrayScript collectingTrayCheck = hit.transform.GetComponent<CollectingTrayScript>();
-                
+                CollectingTrayScript collectingTrayScript = hit.transform.GetComponent<CollectingTrayScript>();
+                CanAnimatedScript canAnimatedScript = canAnimated.GetComponent<CanAnimatedScript>();
+                PlayerScript playerScript = player.GetComponent<PlayerScript>();
+
+
                 if (buttonScript != null)// Si l'objet touché est le bouton
                 {
                     buttonScript.ButtonBehavior();
                 }
                 
-                if (collectingTrayCheck != null) // Si l'object touché est le collecteur de boisson
+                if (collectingTrayScript != null) // Si l'object touché est le collecteur de boisson
                 {
-                    collectingTrayCheck.LaMethodeQuiLanceLanimation();
+                    collectingTrayScript.LaMethodeQuiFaitApparaitreLaBoisson();
+                    canAnimatedScript.LaMethodeQuiLancelAnimation();
+                    playerScript.LaMethodeQuiFaitRoter();
+
+
                 }
-
-            }
-
-            // Si je touche l'objet collectingTray et que le CollectingTrayScript.isCollectible = true; 
-            // alors je lance 
+            }      
         }
     }
-
 }
