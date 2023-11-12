@@ -50,7 +50,7 @@ public class ButtonBehaviorScript : MonoBehaviour
 
         if (rb != null)
         {
-            rb.AddForce(transform.up * valforce);
+            rb.AddForce(transform.forward * valforce);
         }
         else
         {
