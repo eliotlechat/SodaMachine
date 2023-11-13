@@ -26,7 +26,7 @@ public class CollectingTrayScript : MonoBehaviour
     {
         outlineMat.SetFloat("_Scale", 0f);
     }
-    public void LaMethodeQuiFaitApparaitreLaBoisson()
+    public void SpawnCan()
     {
 
         Debug.Log("blabla");

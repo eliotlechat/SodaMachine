@@ -32,7 +32,7 @@ public class CanScript : MonoBehaviour
         yield return new WaitForSeconds(2); 
         transform.position = initialPosition;
         transform.rotation = initialRotation;
-        buttonBehaviorScript.DisableEmission();
+        
     }
 }
 

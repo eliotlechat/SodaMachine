@@ -22,7 +22,7 @@ public class CanAnimatedScript : MonoBehaviour
 
     }
 
-    public void LaMethodeQuiLancelAnimation()
+    public void CanAnimationStart()
     {
         mAnimator.SetTrigger("Drinking");
     }
