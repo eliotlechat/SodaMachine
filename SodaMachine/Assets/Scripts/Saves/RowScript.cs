@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 public class RowScript : MonoBehaviour
@@ -8,6 +5,8 @@ public class RowScript : MonoBehaviour
     public GameObject[] itemsList; // Le tableau de prefabs à instancier
     float distanceInterval = 0.1f; // distance des intervalles entre chaque instance
     int numberOfInstances = 4; // le nombre d'instance à créer. 
+    [SerializeField]
+    private Transform stack;
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +37,7 @@ public class RowScript : MonoBehaviour
         }
     }
 
-    
+
     void InstantiateObjects(Transform stack, GameObject item)
     {
         // Instantier le nombre d'objets définis, à un intervalle d'une distance donnée, avec une rotation aléatoire sur l'axe des y
@@ -51,18 +50,22 @@ public class RowScript : MonoBehaviour
 
         }
     }
+
+    // On va peut etre créer un script StackScript qui permet de relier les boutons aux stacks.
+    // Et faire une classe qui quand j'appuie sur le bouton, cela fait avancer la méthode MoveCans.
     // Méthode pour déplacer les canettes d'une stack
-    public void MoveCans(Transform stack)
+    public void MoveCans()
     {
         // Pour chaque enfant du stack
         foreach (Transform canette in stack)
         {
-            // Parcourir chaque canette dans le stack
-            foreach (Transform can in stack)
-            {
+            if(canette != transform)
+            { 
                 // Déplacer la canette de 0.1f
-                can.position = can.position + new Vector3(0, 0, 1f);
+                canette.position = canette.position + new Vector3(0, 0, 0.1f);
             }
+            
+
         }
     }
     // Ensuite ce qu'il faut, c'est d'assigner un stack par bouton, 

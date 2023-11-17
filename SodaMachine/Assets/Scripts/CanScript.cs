@@ -5,34 +5,34 @@ using UnityEngine;
 public class CanScript : MonoBehaviour
 {
     public AudioClip fallSound;
-    public ButtonBehaviorScript buttonBehaviorScript;
-    private Vector3 initialPosition;
-    private Quaternion initialRotation;
+    
+    //private Vector3 initialPosition;
+    //private Quaternion initialRotation;
 
     private void Start()
     {
-        initialPosition = transform.position;
-        initialRotation = transform.rotation; 
+        //initialPosition = transform.position;
+        //initialRotation = transform.rotation; 
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if(other.gameObject.name == "collectingTray")
+        if(collision.gameObject.name == "collectingTray")
         {
             ButtonBehaviorScript.isCanDropping = false;
-            buttonBehaviorScript.canBeExecuted = true;
+            ButtonBehaviorScript.canBeExecuted = true;
             Debug.Log(gameObject.name + " est tombé dans le collecteur de boisson");
             GetComponent<AudioSource>().PlayOneShot(fallSound);
-            StartCoroutine(ResetCan());
+            //StartCoroutine(ResetCan());
         }
     }
-    IEnumerator ResetCan()
-    {
-        // reset la position et la rotation de la canette
-        yield return new WaitForSeconds(2); 
-        transform.position = initialPosition;
-        transform.rotation = initialRotation;
+    //IEnumerator ResetCan()
+    //{
+    //    // reset la position et la rotation de la canette
+    //    yield return new WaitForSeconds(2); 
+    //    transform.position = initialPosition;
+    //    transform.rotation = initialRotation;
         
-    }
+    //}
 }
 

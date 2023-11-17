@@ -10,12 +10,14 @@ public class PlayerScript : MonoBehaviour
     
 
     [SerializeField]
-    private AudioClip drinking; 
+    private AudioClip drinking;
+
+    [SerializeField]
+    private StackScript stackScript;
 
     void Start()
-    {
-        
-        GameObject canAnimated = GameObject.Find("cocaCanAnimated");
+    { 
+         canAnimated = GameObject.Find("cocaCanAnimated");
     }
 
 
@@ -46,6 +48,7 @@ public class PlayerScript : MonoBehaviour
                 if (buttonScript != null)
                 {
                     buttonScript.ButtonBehavior();
+                    stackScript.MoveCans();
                 }
 
                 // Si l'objet touché est le collecteur de boisson

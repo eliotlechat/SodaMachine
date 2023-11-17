@@ -5,9 +5,10 @@ using UnityEngine;
 public class CollectingTrayScript : MonoBehaviour
 {
     bool isCollectible = false;
+    public bool isInCollectingTray = false;
     public Material outlineMat;
     GameObject boisson;
-
+    public FallingTriggerScript fallingTriggerScript;
 
     private void Start()
     {
@@ -15,10 +16,15 @@ public class CollectingTrayScript : MonoBehaviour
 
     }
     
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log("L'objet" + collision.gameObject + "est tombé");
+      
+
         isCollectible = true; 
+        isInCollectingTray = true;
         outlineMat.SetFloat("_Scale", 1.02f);
+        fallingTriggerScript.ActiveKinematic(collision.collider);
     }
 
     
@@ -29,7 +35,7 @@ public class CollectingTrayScript : MonoBehaviour
     public void SpawnCan()
     {
 
-        Debug.Log("blabla");
+        
         boisson.GetComponent<Renderer>();
 
 
