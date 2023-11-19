@@ -23,6 +23,10 @@ public class PlayerScript : MonoBehaviour
     private bool canDrink = false;
     private bool canOpen = false;
 
+    
+
+    
+
 
     void Update()
     {
@@ -46,8 +50,9 @@ public class PlayerScript : MonoBehaviour
                 canDrink = false;
             }
 
-            if (canOpen == true && canDrink == false)
+            if (canOpen == true && canOpen )
             {
+                
                 GetComponent<AudioSource>().PlayOneShot(openTabSound);
                 canOpen = false;
                 canDrink = true;

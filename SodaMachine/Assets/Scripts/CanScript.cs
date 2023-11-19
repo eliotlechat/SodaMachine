@@ -7,6 +7,9 @@ public class CanScript : MonoBehaviour
     [SerializeField]
     AudioClip fallSound;
 
+
+   
+
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.name == "collectingTray")
@@ -18,6 +21,12 @@ public class CanScript : MonoBehaviour
             
         }
     }
+
+    public void PlayOpeningTab()
+    {
+        Debug.Log("J'entends le pshiit de la canette");
+    }
+
     
 }
 
