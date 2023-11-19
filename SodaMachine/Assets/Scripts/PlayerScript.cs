@@ -7,7 +7,7 @@ public class PlayerScript : MonoBehaviour
     private Ray ray; // Rayon utilisé pour la détection de collision
     public RaycastHit hit; // L'objet qui a été touché par la collision
     GameObject canAnimated;
-    
+
 
     [SerializeField]
     private AudioClip drinking;
@@ -16,14 +16,17 @@ public class PlayerScript : MonoBehaviour
     private StackScript stackScript;
 
     void Start()
-    { 
-         canAnimated = GameObject.Find("cocaCanAnimated");
+    {
+        canAnimated = GameObject.Find("cocaCanAnimated");
     }
 
 
     void Update()
     {
-        
+        if (stackScript.moveCan == true)
+        {
+            stackScript.MoveCans();
+        }
         ShootRayFromScreenCenter();
     }
 
@@ -39,15 +42,16 @@ public class PlayerScript : MonoBehaviour
             // Si le rayon touche un objet
             if (Physics.Raycast(ray, out hit, Camera.main.farClipPlane))
             {
-                
+
                 ButtonBehaviorScript buttonScript = hit.transform.GetComponent<ButtonBehaviorScript>();
                 CollectingTrayScript collectingTrayScript = hit.transform.GetComponent<CollectingTrayScript>();
-                
+
 
                 // Si l'objet touché est le bouton
                 if (buttonScript != null)
                 {
                     buttonScript.ButtonBehavior();
+                    stackScript.moveCan = true;
                     stackScript.MoveCans();
                 }
 
@@ -57,7 +61,7 @@ public class PlayerScript : MonoBehaviour
                     //Faire apparaitre la canette dans la main
                     collectingTrayScript.SpawnCan();
                     // Démarrer l'animation de la canette
-                    canAnimated.GetComponent<CanAnimatedScript>().CanAnimationStart();
+                    //canAnimated.GetComponent<CanAnimatedScript>().CanAnimationStart();
                     // Jouer le son de boisson
                     DrinkingPlaySound();
                 }

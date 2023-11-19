@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FallingTriggerScript : MonoBehaviour
 {
+    [SerializeField] 
+    StackScript stackScript;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,12 +20,13 @@ public class FallingTriggerScript : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
+        stackScript.moveCan = false;
         Rigidbody rb = other.GetComponent<Rigidbody>();
         if (rb != null )
         {
             rb.isKinematic = false;
         }
-        // Il faudrait que le rb se désactive quand il touche le CollectingTrayScrupt
+        
     }
 
     public void ActiveKinematic(Collider other)

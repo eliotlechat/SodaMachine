@@ -3,6 +3,7 @@
 
 
 
+// le mouvement des canettes se fait si moveCan est true; moveCan est true une fois que j'ai appuyé le bouton et devient plus movecan quand la canette a touché le Falling Trigger
 
 // mettre dans void update : pour voir le mouvment des canettes et peut etre mettre une couroutine
 // il faut que j'agrandisse le bac de récupération parce que problème de physique.e

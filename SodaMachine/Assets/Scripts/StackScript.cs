@@ -8,13 +8,14 @@ public class StackScript : MonoBehaviour
     GameObject item;
 
     [SerializeField, Tooltip("defines the distance at which items will move")]
-    float moveDistance = 0.07f;
+    float moveDistance = 0.001f;
 
     CollectingTrayScript collectingTrayScript;
 
+    public bool moveCan = false;
 
 
-    // Start is called before the first frame update
+    
     void Start()
     {   // For each child of the GameObject to which this script is attached
         foreach (Transform child in transform)
@@ -34,6 +35,7 @@ public class StackScript : MonoBehaviour
         }
     }
 
+    
 
     public void MoveCans()
     {
