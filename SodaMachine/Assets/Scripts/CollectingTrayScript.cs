@@ -14,12 +14,6 @@ public class CollectingTrayScript : MonoBehaviour
     [SerializeField]
     private GameObject hand;
     
-    private void Start()
-    {
-       
-
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log("L'objet" + collision.gameObject + "est tombé");
@@ -46,9 +40,6 @@ public class CollectingTrayScript : MonoBehaviour
             itemFalled.transform.localRotation = Quaternion.identity;
             itemFalled.transform.localScale = Vector3.one;
         }
-           
-       
-
       
     }
 

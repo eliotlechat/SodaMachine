@@ -14,7 +14,6 @@ public class StackScript : MonoBehaviour
 
     public bool moveCan = false;
 
-
     
     void Start()
     {   // For each child of the GameObject to which this script is attached
@@ -35,8 +34,6 @@ public class StackScript : MonoBehaviour
         }
     }
 
-    
-
     public void MoveCans()
     {
         foreach (Transform child in transform)
@@ -47,10 +44,6 @@ public class StackScript : MonoBehaviour
                 child.transform.Translate(Vector3.forward * moveDistance);
             }
             
-
         }
-
-    
-
   
 }

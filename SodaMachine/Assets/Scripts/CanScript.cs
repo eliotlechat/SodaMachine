@@ -4,14 +4,8 @@ using UnityEngine;
 
 public class CanScript : MonoBehaviour
 {
-    public AudioClip fallSound;
-    
-    
-
-    private void Start()
-    {
-         
-    }
+    [SerializeField]
+    AudioClip fallSound;
 
     private void OnCollisionEnter(Collision collision)
     {
