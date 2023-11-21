@@ -7,8 +7,17 @@ public class CanScript : MonoBehaviour
     [SerializeField]
     AudioClip fallSound;
 
+    [SerializeField]
+    GameObject openingTab;
 
-   
+    
+
+
+
+    private void Start()
+    {
+        
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -25,8 +34,8 @@ public class CanScript : MonoBehaviour
     public void PlayOpeningTab()
     {
         Debug.Log("J'entends le pshiit de la canette");
+        // déclencher l'animation 
+        openingTab.GetComponent<Animator>().SetTrigger("openingTabEvent");
     }
-
-    
 }
 

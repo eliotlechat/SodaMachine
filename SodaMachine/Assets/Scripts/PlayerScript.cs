@@ -20,12 +20,11 @@ public class PlayerScript : MonoBehaviour
     [SerializeField]
     Animator mAnimator;
 
+    [SerializeField]
+    CanScript canScript;
+
     private bool canDrink = false;
     private bool canOpen = false;
-
-    
-
-    
 
 
     void Update()
@@ -52,7 +51,7 @@ public class PlayerScript : MonoBehaviour
 
             if (canOpen == true && canOpen )
             {
-                
+                canScript.PlayOpeningTab();
                 GetComponent<AudioSource>().PlayOneShot(openTabSound);
                 canOpen = false;
                 canDrink = true;

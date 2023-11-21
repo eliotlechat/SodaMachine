@@ -4,7 +4,6 @@
 
 // Refactorisation: 
 // mettre la variable OpenTabSound dans CanScript pour plus de cohérence et appelé la méthode depuis PlayerScript
-// Le fallingTriggerScruot pour être dans le Script StackScript.
 
 
 // Améliorations : 
@@ -33,3 +32,14 @@
 /// Reflexions : 
 // activer l'anim play.setTrigger("openingTabEvent")
 // dans la méthode PlayOpeningTab() sauf qu'il faut que je reference tab qui est un enfant
+
+
+///A voir avec Pierre
+// Je n'arrive pas à déplacer le déclenchement du son openTabSound dans la classe CanScript. 
+// Le son ne se déclence pas car il me dit que l'AudioSource est disable. 
+// J'ai vérifié d'assigner les deux reférences de scripts sur l'inspecteur et aussi vérifier 
+// si l'audiosource se désactiver. 
+// J'ai aussi niveau forcé l'activation du l'audiosource mais rien n'y fait.
+
+// Le fallingTriggerScript pour être dans le Script StackScript.
+// Par exemple dans ce cas là comme le void OnTrigger Enter est dans le fallingTrigger est il plus pertinent de le laisser comme tel ?
