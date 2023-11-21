@@ -425,6 +425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fallSound: {fileID: 8300000, guid: ad469f929b5790b48a829dd8afc7387f, type: 3}
+  openingTab: {fileID: 0}
 --- !u!82 &162330411
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1428,6 +1429,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fallSound: {fileID: 8300000, guid: ad469f929b5790b48a829dd8afc7387f, type: 3}
+  openingTab: {fileID: 0}
 --- !u!82 &446806552
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2261,6 +2263,7 @@ MonoBehaviour:
   openTabSound: {fileID: 8300000, guid: ea043a8aaf6256146bc0855efaf6c6a8, type: 3}
   stackScript: {fileID: 7657936930197552294}
   mAnimator: {fileID: 1860951399}
+  canScript: {fileID: 4434077199177024857, guid: b43d57adfa5634f4f82bf9d11c157072, type: 3}
 --- !u!82 &557649164
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3558,6 +3561,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fallSound: {fileID: 8300000, guid: ad469f929b5790b48a829dd8afc7387f, type: 3}
+  openingTab: {fileID: 0}
 --- !u!82 &737947006
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5835,6 +5839,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fallSound: {fileID: 8300000, guid: ad469f929b5790b48a829dd8afc7387f, type: 3}
+  openingTab: {fileID: 0}
 --- !u!82 &1304214880
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7845,6 +7850,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fallSound: {fileID: 8300000, guid: ad469f929b5790b48a829dd8afc7387f, type: 3}
+  openingTab: {fileID: 0}
 --- !u!54 &1757361448
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8565,6 +8571,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fallSound: {fileID: 8300000, guid: ad469f929b5790b48a829dd8afc7387f, type: 3}
+  openingTab: {fileID: 0}
 --- !u!82 &1853640571
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8811,6 +8818,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fallSound: {fileID: 8300000, guid: ad469f929b5790b48a829dd8afc7387f, type: 3}
+  openingTab: {fileID: 0}
 --- !u!82 &1853720212
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9010,6 +9018,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fallSound: {fileID: 8300000, guid: ad469f929b5790b48a829dd8afc7387f, type: 3}
+  openingTab: {fileID: 0}
 --- !u!82 &1875193728
 AudioSource:
   m_ObjectHideFlags: 0
