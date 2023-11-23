@@ -20,8 +20,7 @@ public class PlayerScript : MonoBehaviour
     [SerializeField]
     Animator mAnimator;
 
-    [SerializeField]
-    CanScript canScript;
+    
 
     private bool canDrink = false;
     private bool canOpen = false;
@@ -51,7 +50,7 @@ public class PlayerScript : MonoBehaviour
 
             if (canOpen == true && canOpen )
             {
-                canScript.PlayOpeningTab();
+                
                 GetComponent<AudioSource>().PlayOneShot(openTabSound);
                 canOpen = false;
                 canDrink = true;
@@ -65,15 +64,21 @@ public class PlayerScript : MonoBehaviour
             // Si le rayon touche un objet
             if (Physics.Raycast(ray, out hit, Camera.main.farClipPlane))
             {
-                
-                ButtonBehaviorScript buttonScript = hit.transform.GetComponent<ButtonBehaviorScript>();
+                // ***** Là c'est la partie la plus cruciale qui m'intéresse le plus *******
+                ButtonScript buttonScript = hit.transform.GetComponent<ButtonScript>();
+                if (buttonScript != null)
+                {
+                    buttonScript.OnRaycastHit();
+                }
+
+                ButtonBehaviorScript buttonBehaviorScript = hit.transform.GetComponent<ButtonBehaviorScript>();
                 CollectingTrayScript collectingTrayScript = hit.transform.GetComponent<CollectingTrayScript>();
 
 
                 // Si l'objet touché est le bouton
-                if (buttonScript != null)
+                if (buttonBehaviorScript != null)
                 {
-                    buttonScript.ButtonBehavior();
+                    buttonBehaviorScript.ButtonBehavior();
                     stackScript.moveCan = true;
                     stackScript.MoveCans();
                 }
