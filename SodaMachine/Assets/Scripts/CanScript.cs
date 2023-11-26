@@ -23,8 +23,8 @@ public class CanScript : MonoBehaviour
     {
         if(collision.gameObject.name == "collectingTray")
         {
-            ButtonBehaviorScript.isCanDropping = false;
-            ButtonBehaviorScript.canBeExecuted = true;
+            ButtonScript.isCanDropping = false;
+            ButtonScript.canBeExecuted = true;
             Debug.Log(gameObject.name + " est tombé dans le collecteur de boisson");
             GetComponent<AudioSource>().PlayOneShot(fallSound);
             

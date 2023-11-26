@@ -64,21 +64,14 @@ public class PlayerScript : MonoBehaviour
             // Si le rayon touche un objet
             if (Physics.Raycast(ray, out hit, Camera.main.farClipPlane))
             {
-                // ***** Là c'est la partie la plus cruciale qui m'intéresse le plus *******
+                
                 ButtonScript buttonScript = hit.transform.GetComponent<ButtonScript>();
-                if (buttonScript != null)
-                {
-                    buttonScript.OnRaycastHit();
-                }
-
-                ButtonBehaviorScript buttonBehaviorScript = hit.transform.GetComponent<ButtonBehaviorScript>();
                 CollectingTrayScript collectingTrayScript = hit.transform.GetComponent<CollectingTrayScript>();
 
-
-                // Si l'objet touché est le bouton
-                if (buttonBehaviorScript != null)
+                if (buttonScript != null) // si l'objet touché est le bouton
                 {
-                    buttonBehaviorScript.ButtonBehavior();
+                    buttonScript.ButtonValueDisplay(); // On déclenche le comportement du bouton et le bouton va déclencher 
+                    buttonScript.ButtonBehavior();
                     stackScript.moveCan = true;
                     stackScript.MoveCans();
                 }
