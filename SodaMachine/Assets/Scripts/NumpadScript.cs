@@ -12,6 +12,8 @@ public class NumpadScript : MonoBehaviour
     [SerializeField]
     private TextMesh textMesh;
 
+    string combinationToString;
+
     int combination;
 
     public void Combination(int inputField)
@@ -20,22 +22,21 @@ public class NumpadScript : MonoBehaviour
         if (buttonsVal.Count == 2)
         {
             combination = buttonsVal[0]*10 + buttonsVal[1];
-            string combinationToString = combination.ToString();
+            combinationToString = combination.ToString();
 
             textMesh.text = combinationToString;
             Debug.Log("La combinaison est de " + combinationToString);
             buttonsVal.Clear();
         }
 
-        // en gros là je devrais faire quelque chose comme si la combination est : 11 alors je mets la stack 11
+        
 
     }
 
-    void Machin()
+    void ChosenStackMove()
     {
-        if (combination == 11)
-        {
-            // choisir la stack stackTab[0]
-        }
+        Debug.Log("La stack " + combinationToString + "qui va se mettre en mouvement");
+        GameObject chosenStack = GameObject.Find(combinationToString);
+        chosenStack.GetComponent<StackScript>().MoveCans();
     }
 }
