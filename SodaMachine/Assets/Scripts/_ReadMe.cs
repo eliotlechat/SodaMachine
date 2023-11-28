@@ -2,6 +2,14 @@
 
 
 
+// Projet étape : 
+// Redesigné : penser objet , qu'est ce qui compose mon programme. Quels sont les objets qui interagissente entre eux 
+// identifier les responsabilités de chaque objet. Que dois faire l'objet. 
+// Utiliser l'encapsulation. Chaque objet doit cacher ses détails d'implémentation.
+// Utiliser l'interface. Les objets peuvent communiquer entre eurx en utilisant les interfaces. 
+
+
+
 // Refactorisation: 
 // mettre la variable OpenTabSound dans CanScript pour plus de cohérence et appelé la méthode depuis PlayerScript
 

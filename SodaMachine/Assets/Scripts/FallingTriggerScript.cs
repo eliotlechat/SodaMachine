@@ -10,7 +10,7 @@ public class FallingTriggerScript : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        stackScript.moveCan = false;
+        //stackScript.moveCan = false;
         Rigidbody rb = other.GetComponent<Rigidbody>();
         if (rb != null )
         {

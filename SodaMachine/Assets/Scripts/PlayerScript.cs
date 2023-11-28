@@ -14,8 +14,11 @@ public class PlayerScript : MonoBehaviour
     [SerializeField]
     AudioClip openTabSound;
 
-    [SerializeField]
+    
     private StackScript stackScript; // pour référencer le script StackScript qui est attaché à l'objet Stack
+
+    [SerializeField]
+    private NumpadScript numpadScript;
 
     [SerializeField]
     Animator mAnimator;
@@ -25,13 +28,21 @@ public class PlayerScript : MonoBehaviour
     private bool canDrink = false;
     private bool canOpen = false;
 
+    private void Start()
+    {   // Pour accéder à la méthode MoveCans, il faut que j'accède au script StackScript du prefab qui sera selectionné. 
+        // Sauf que stackScript ne peut pas être une référence directe car il y a plusieurs possiblités de prefab.
+        // En revanche dans le script Numpad, je connais le prefab selectionné. 
+        // Mais je ne sais pas comment y accéder car ils y a plusieurs possiblités de prefab.
+        //stackScript = 
+    }
+
 
     void Update()
     {
-        if (stackScript.moveCan == true)
-        {
-            stackScript.MoveCans();
-        }
+        //if (stackScript.moveCan == true)
+        //{
+        //    stackScript.MoveCans();
+        //}
         ShootRayFromScreenCenter();
     }
 
@@ -72,8 +83,8 @@ public class PlayerScript : MonoBehaviour
                 {
                     buttonScript.ButtonValueDisplay(); // On déclenche le comportement du bouton et le bouton va déclencher 
                     buttonScript.ButtonBehavior();
-                    stackScript.moveCan = true;
-                    stackScript.MoveCans();
+                    //stackScript.moveCan = true;
+                    
                 }
 
                 // Si l'objet touché est le collecteur de boisson

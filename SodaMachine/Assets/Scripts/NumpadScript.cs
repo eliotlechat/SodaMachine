@@ -12,31 +12,38 @@ public class NumpadScript : MonoBehaviour
     [SerializeField]
     private TextMesh textMesh;
 
-    string combinationToString;
+    [SerializeField]
+    private GameObject stock;
 
-    int combination;
 
-    public void Combination(int inputField)
+    // Ca c'est la méthode qui permet de déclencher la fonction qui permet de déplacer les canettes de la stack selectionné
+    public void CombinationForMovingCans(int inputField)
     {
         buttonsVal.Add(inputField);
         if (buttonsVal.Count == 2)
         {
-            combination = buttonsVal[0]*10 + buttonsVal[1];
-            combinationToString = combination.ToString();
+            int combination = buttonsVal[0]*10 + buttonsVal[1];
+            string combinationAsString = combination.ToString();
 
-            textMesh.text = combinationToString;
-            Debug.Log("La combinaison est de " + combinationToString);
+            textMesh.text = combinationAsString;
+            Debug.Log("La combinaison est de " + combinationAsString);
             buttonsVal.Clear();
+
+            Transform chosenTransform = stock.transform.Find(combinationAsString);
+
+            if (chosenTransform != null)
+            {
+                GameObject chosenStack = chosenTransform.gameObject;
+                Debug.Log("GameObject trouvé : " + chosenStack.name);
+                chosenStack.GetComponent<StackScript>().MoveCans();
+            }
+            else
+            {
+                Debug.Log("Aucun GameObject trouvé avec le nom " + combinationAsString);
+            }
         }
 
-        
-
     }
 
-    void ChosenStackMove()
-    {
-        Debug.Log("La stack " + combinationToString + "qui va se mettre en mouvement");
-        GameObject chosenStack = GameObject.Find(combinationToString);
-        chosenStack.GetComponent<StackScript>().MoveCans();
-    }
+    
 }

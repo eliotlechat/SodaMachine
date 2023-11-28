@@ -2558,7 +2558,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   drinkingSound: {fileID: 8300000, guid: fd7492b1bbed2e44ba6420d7383fe234, type: 3}
   openTabSound: {fileID: 8300000, guid: ea043a8aaf6256146bc0855efaf6c6a8, type: 3}
-  stackScript: {fileID: 7657936930197552294}
+  numpadScript: {fileID: 1509716155}
   mAnimator: {fileID: 1860951399}
 --- !u!1 &602892887
 GameObject:
@@ -4852,7 +4852,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2af41df5488c238428a9cb07e618b86c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stackTab: []
   textMesh: {fileID: 0}
+  stock: {fileID: 0}
 --- !u!1 &855097173 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5162820104835090806, guid: c07e4111a1c16c54da7ea0728a262153, type: 3}
@@ -7998,7 +8000,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2af41df5488c238428a9cb07e618b86c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stackTab: []
   textMesh: {fileID: 849689708}
+  stock: {fileID: 1506476437}
 --- !u!1 &1520202812
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,7 +26,9 @@ public class ButtonScript : MonoBehaviour
         Debug.Log(inputField + " a été touché");
         string inputFieldAsString = inputField.ToString();
         textMesh.text = inputFieldAsString;
-        numpadScript.Combination(inputField);
+
+        // On déclenche le déplacement des canettes choisi par la combinaison
+        numpadScript.CombinationForMovingCans(inputField);
     }
 
     public void ButtonBehavior()

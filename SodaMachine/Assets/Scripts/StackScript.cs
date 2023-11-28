@@ -12,7 +12,7 @@ public class StackScript : MonoBehaviour
 
     CollectingTrayScript collectingTrayScript;
 
-    public bool moveCan = false;
+    //public bool moveCan = false;
 
     
     void Start()
@@ -36,14 +36,18 @@ public class StackScript : MonoBehaviour
 
     public void MoveCans()
     {
+        Debug.Log("La méthode MoveCans a été appelée sur " + this.name);
+
         foreach (Transform child in transform)
 
-           
+
             if (collectingTrayScript != null && !collectingTrayScript.isInCollectingTray)
-            { 
+            {
                 child.transform.Translate(Vector3.forward * moveDistance);
+                Debug.Log("Les canettes ont été déplacées avec succès");
             }
-            
-        }
+
+        
+    }
   
 }
