@@ -2,40 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CanScript : MonoBehaviour
+public class CanScript : ItemScript
 {
-    [SerializeField]
-    AudioClip fallSound;
+    [Header("Les variables de CanScript")]
 
     [SerializeField]
-    GameObject openingTab;
+    GameObject openingTabCan;
 
-    
-
-
-
-    private void Start()
+    protected override void Start() // Va écraser la méthode du parent
     {
-        
+        // Initialise le parent (l'item, donc audiosource et l'audioClip) et bease correspond au parent donc Item
+        base.Start();
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.name == "collectingTray")
-        {
-            ButtonScript.isCanDropping = false;
-            ButtonScript.canBeExecuted = true;
-            Debug.Log(gameObject.name + " est tombé dans le collecteur de boisson");
-            GetComponent<AudioSource>().PlayOneShot(fallSound);
-            
-        }
-    }
-
-    public void PlayOpeningTab()
+    protected override void Ouvrir()
     {
         Debug.Log("J'entends le pshiit de la canette");
         // déclencher l'animation 
-        openingTab.GetComponent<Animator>().SetTrigger("openingTabEvent");
+        openingTabCan.GetComponent<Animator>().SetTrigger("openingTabEvent");
     }
+   
 }
-

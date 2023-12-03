@@ -4,26 +4,15 @@ using UnityEngine;
 
 public class FallingTriggerScript : MonoBehaviour
 {
-    [SerializeField] 
-    StackScript stackScript;
+    [SerializeField]
+    MachineScript machineScript;
 
-
-    public void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        //stackScript.moveCan = false;
         Rigidbody rb = other.GetComponent<Rigidbody>();
-        if (rb != null )
-        {
-            rb.isKinematic = false;
-        }     
+        rb.isKinematic = false;
+        machineScript.itemsMovable = false;
     }
 
-    public void ActiveKinematic(Collider other)
-    {
-        Rigidbody rb= other.GetComponent<Rigidbody>();
-        if(rb != null )
-        {
-            rb.isKinematic= true;
-        }
-    }
+
 }

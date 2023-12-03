@@ -67,7 +67,7 @@ PrefabInstance:
       addedObject: {fileID: 3507519218211676564}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 27517fe738529b4499bb2f2ecec586f6, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4434077199177024857}
+      addedObject: {fileID: 846141832376574931}
     - targetCorrespondingSourceObject: {fileID: -3824390159933276123, guid: 27517fe738529b4499bb2f2ecec586f6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7724415441668070295}
@@ -247,7 +247,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &4434077199177024857
+--- !u!114 &846141832376574931
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -259,5 +259,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60144bd80db6888489654d0cc6853e95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallSound: {fileID: 8300000, guid: ad469f929b5790b48a829dd8afc7387f, type: 3}
-  openingTab: {fileID: 4560614201976319934}
+  itemFallSound: {fileID: 8300000, guid: ad469f929b5790b48a829dd8afc7387f, type: 3}
+  openingTabCan: {fileID: 4560614201976319934}
