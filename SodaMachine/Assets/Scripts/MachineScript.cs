@@ -9,16 +9,11 @@ public class MachineScript : MonoBehaviour
 
     float canMovementDistance = 0.001f;
 
-    
-
     public bool itemsMovable = false;
-
-
   
     private void Update()
     {
-        MoveItems();
-            
+        MoveItems();            
     }
 
     public void MoveItems()
