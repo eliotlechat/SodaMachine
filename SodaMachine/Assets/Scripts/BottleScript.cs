@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CanScript : ItemScript
+public class BottleScript : ItemScript
 {
-    [Header("Les variables de CanScript")]
+    [Header("Les variables de BottleScript")]
 
     [SerializeField]
-    GameObject openingTabCan;
+    GameObject openingCapBottle;
 
     protected override void Start() // Va écraser la méthode du parent
     {
@@ -17,10 +17,9 @@ public class CanScript : ItemScript
 
     protected override void Ouvrir()
     {
-        Debug.Log("J'entends le pshiit de la canette");
+        Debug.Log("J'entends l'ouverture du bouchon");
         // déclencher l'animation 
-        openingTabCan.GetComponent<Animator>().SetTrigger("openingTabEvent");
+        //openingCapBottle.GetComponent<Animator>().SetTrigger("openingCapEvent");
     }
 
-    
 }

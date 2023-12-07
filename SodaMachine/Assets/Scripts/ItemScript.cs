@@ -29,11 +29,10 @@ public abstract class ItemScript : MonoBehaviour
         if (collision.gameObject.GetComponent<CollectingTrayScript>()!=null)
         {
             PlayFallSound();
-            
-            
-        }
-            
-        
+           
+        }  
         
     }
+
+
 }
