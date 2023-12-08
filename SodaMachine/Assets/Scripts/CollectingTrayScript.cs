@@ -2,25 +2,36 @@ using UnityEngine;
 
 public class CollectingTrayScript : MonoBehaviour
 {
-
     public bool itemInCollectingTray = false;
 
     [SerializeField]
     private Material outlineMat;
 
-    
+    [HideInInspector]
     public GameObject itemFalled; // ajout d'une variable pour stocker l'objet qui est dans le collecteur
 
+    AudioSource collectingTrayAudioSource;
+
     [SerializeField]
-    private GameObject hand;
+    AudioClip collectingTrayDoorSound;
 
+    private void Start()
+    {
+        collectingTrayAudioSource = GetComponent<AudioSource>();
 
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
         itemFalled = collision.gameObject;
+        Debug.Log(itemFalled.name);
         OutlinerOn();
         itemInCollectingTray = true;
+    }
+
+    public void PlayCollectingTrayDoorSound()
+    {
+        collectingTrayAudioSource.PlayOneShot(collectingTrayDoorSound);
     }
 
     public void OutlinerOn()
@@ -38,16 +49,5 @@ public class CollectingTrayScript : MonoBehaviour
         OutlinerOff();
     }
 
-    public void SpawnInHand()
-    {
-        if (itemFalled != null)
-        {
-            itemFalled.transform.SetParent(hand.transform);
-            itemFalled.transform.localPosition = Vector3.zero;
-            itemFalled.transform.localRotation = Quaternion.identity;
-            itemFalled.transform.localScale = Vector3.one;
-        }
-
-    }
 
 }

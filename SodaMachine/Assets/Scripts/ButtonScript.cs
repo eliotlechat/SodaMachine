@@ -7,10 +7,12 @@ public class ButtonScript : MonoBehaviour
     [SerializeField]
     PlayerScript playerScript;
 
+    AudioSource buttonAudioSource;
+
     [SerializeField]
     AudioClip soundButton;
 
-    AudioSource buttonAudioSource;
+    
 
     // si le raycast touche le bouton alors, on déclenche le son bip, et on dit au Numpad quels bouton a été touché 
 

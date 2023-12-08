@@ -1,11 +1,13 @@
-/*J'ai ma méthode SpawnInHand() et je cherche à savoir où le mettre 
- * En gros c'est lorsque la canette se trouve dans le collecteur de boisson
- * Si je clique sur le collecteur de boisson
- * Alors la canette SpawnInHand(), c'est à dire se met en enfant de la main et se place à 0,0,0 dans le transform position, et rotation
+/*
+ * Le rigidbody de l'item est géré une fois dans le FallingTriggerScript et une autre fois dans le 
+ * handscript.Il faudrait que je le gère dans la class ItemScript mais comment faire parce qu'il y a 
+ * protected visual dans le Start().
+ * MAJ de l'UML A refaire.
  * 
- * Actuellement SpawnInHand() est dans la classe CollectingTrayScript mais c'est pas trop logique. Pour l'instant je l'ai mis là parce 
- * que c'est dans le OnColliderEnter qu'on peut connaitre l'item qui se trouve dans le collectingTray. 
- * Et en plus la detection du raycasst est dans le script Player.  
- *
- * Ma logique me dirait que ce serait dans la classe Item qu'il y aurait la Méthode SpawnInHand 
-*/
+ */
+
+/* Repenser le distributeur, il y a un problème déjà je pense qu'il faut agrandir l'espacement
+ * et mettre des colliders sur les côtés
+ * 
+ * 
+ */
