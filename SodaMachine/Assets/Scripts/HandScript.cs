@@ -14,11 +14,8 @@ public class HandScript : MonoBehaviour
     [SerializeField]
     private PlayerScript playerScript;
 
-    [SerializeField]
-    private ItemScript itemScript;
-
     private bool itemIsInHand = false;
-    private bool itemIsOpened = false;
+    //private bool itemIsOpened = false;
 
     private void Start()
     {

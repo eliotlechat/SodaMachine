@@ -4052,6 +4052,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Animator: {fileID: 1860951399}
   playerScript: {fileID: 557649170}
+  itemScript: {fileID: 0}
 --- !u!1001 &1960829329
 PrefabInstance:
   m_ObjectHideFlags: 0
