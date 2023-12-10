@@ -10,6 +10,8 @@ public class NumpadScript : MonoBehaviour
     private HandScript handScript;
     public TMP_Text numpadScreen;
 
+    
+
     int buttonVal;
 
     List<int> buttonsValList = new List<int>();
@@ -40,6 +42,7 @@ public class NumpadScript : MonoBehaviour
             string combinationAsString= combination.ToString();
             numpadScreen.text = combinationAsString;
             buttonsValList.Clear();
+            
         }
     }
 
