@@ -9,7 +9,10 @@ public class NumpadScript : MonoBehaviour
 
     private HandScript handScript;
     public TMP_Text numpadScreen;
-    
+
+    int buttonVal;
+
+    List<int> buttonsValList = new List<int>();
 
     private void Start()
     {
@@ -19,56 +22,25 @@ public class NumpadScript : MonoBehaviour
     public void ButtonValueDisplay()
     {
         GameObject buttonHit = handScript.Button;
-        string buttonName = buttonHit.name;
+        string buttonName = buttonHit.name.ToString();
         numpadScreen.text = buttonName;
+        buttonVal = int.Parse(buttonName);
         Debug.Log("Le bouton touché est " + buttonName);
+        
     }
 
-    /*
-    [SerializeField]
-    private GameObject[] stackTab; 
-
-    List<int>buttonsVal = new List<int>();
-
-    [SerializeField]
-    private TextMesh textMesh;
-
-    [SerializeField]
-    private GameObject stock;
-
-
-    // Ca c'est la méthode qui permet de déclencher la fonction qui permet de déplacer les canettes de la stack selectionné
-    public void CombinationForMovingCans(int inputField)
+    public void ButtonsValueCombination()
     {
-        buttonsVal.Add(inputField);
-        if (buttonsVal.Count == 2)
+        Debug.Log("Le bouton touché correspond à " + buttonVal);
+
+        buttonsValList.Add(buttonVal);
+        if (buttonsValList.Count ==2)
         {
-            int combination = buttonsVal[0]*10 + buttonsVal[1];
-            string combinationAsString = combination.ToString();
-
-            textMesh.text = combinationAsString;
-            Debug.Log("La combinaison est de " + combinationAsString);
-            buttonsVal.Clear();
-
-            // Ici le clavier dit à la machine que l'utilisateur a selectionné le numero XX
-
-            // Tout ça doit plutôt être dans la machine
-            Transform chosenTransform = stock.transform.Find(combinationAsString);
-
-            if (chosenTransform != null)
-            {
-                GameObject chosenStack = chosenTransform.gameObject;
-                Debug.Log("GameObject trouvé : " + chosenStack.name);
-                chosenStack.GetComponent<StackScript>().MoveCans();
-            }
-
-            else
-            {
-                Debug.Log("Aucun GameObject trouvé avec le nom " + combinationAsString);
-            }
+            int combination = buttonsValList[0]*10 + buttonsValList[1];
+            string combinationAsString= combination.ToString();
+            numpadScreen.text = combinationAsString;
+            buttonsValList.Clear();
         }
-
     }
-    */
 
 }

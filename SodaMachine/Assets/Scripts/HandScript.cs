@@ -59,6 +59,7 @@ public class HandScript : MonoBehaviour
                     Button = buttonScript.gameObject;
                     buttonScript.PlayButtonBehavior();
                     numpadScript.ButtonValueDisplay();
+                    numpadScript.ButtonsValueCombination();
 
                 }
                 // SI JE HIT LE COLLECTEUR DE BOISSON
