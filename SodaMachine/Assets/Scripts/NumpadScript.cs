@@ -19,8 +19,9 @@ public class NumpadScript : MonoBehaviour
     public void ButtonValueDisplay()
     {
         GameObject buttonHit = handScript.Button;
-        numpadScreen.text = buttonHit.name;
-        Debug.Log("Le bouton touché est " + buttonHit.name);
+        string buttonName = buttonHit.name;
+        numpadScreen.text = buttonName;
+        Debug.Log("Le bouton touché est " + buttonName);
     }
 
     /*
