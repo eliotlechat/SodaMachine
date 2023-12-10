@@ -1828,8 +1828,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemsMovable: 1
-  input: 46
   stock: {fileID: 1506476437}
+  numpadScript: {fileID: 1629331412}
 --- !u!1001 &815332315
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3278,6 +3278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numpadScreen: {fileID: 1951003900}
+  combination: 46
 --- !u!1001 &1632616095
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ public class NumpadScript : MonoBehaviour
     private HandScript handScript;
     public TMP_Text numpadScreen;
 
-    
+    public int combination;
 
     int buttonVal;
 
@@ -38,7 +38,7 @@ public class NumpadScript : MonoBehaviour
         buttonsValList.Add(buttonVal);
         if (buttonsValList.Count ==2)
         {
-            int combination = buttonsValList[0]*10 + buttonsValList[1];
+            combination = buttonsValList[0]*10 + buttonsValList[1];
             string combinationAsString= combination.ToString();
             numpadScreen.text = combinationAsString;
             buttonsValList.Clear();

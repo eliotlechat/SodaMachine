@@ -7,20 +7,24 @@ public class MachineScript : MonoBehaviour
 
     public bool itemsMovable = false;
 
-    public int input;
+    private int input;
 
     private Transform foundItem;
 
     [SerializeField]
     private GameObject stock;
 
+    
+    NumpadScript numpadScript;
+
     private List<GameObject> items = new List<GameObject>();
 
     private void Start()
     {
+        numpadScript = FindObjectOfType<NumpadScript>(); // Pourquoi GetComponent ne marche pas 
+        input = numpadScript.combination;
         Debug.Log("Le Montant tapé est " + input);
         StackSearch();
-        
     }
 
     private void Update()
@@ -30,8 +34,6 @@ public class MachineScript : MonoBehaviour
 
     public void StackSearch()
     {
-        foundItem = null;
-
         foreach (Transform item in stock.transform)
         {
             if (item.name == input.ToString())
@@ -44,7 +46,7 @@ public class MachineScript : MonoBehaviour
 
     public void MoveItems()
     {
-        if (itemsMovable)
+        if (itemsMovable && foundItem != null)
         {
             foreach (Transform child in foundItem.transform)
 
@@ -56,3 +58,4 @@ public class MachineScript : MonoBehaviour
         }
     }
 }
+
