@@ -1,12 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using System;
 
 public class NumpadScript : MonoBehaviour
 {
 
+    private HandScript handScript;
+    public TMP_Text numpadScreen;
+    
 
+    private void Start()
+    {
+        handScript = FindObjectOfType<HandScript>();
+    }
 
+    public void ButtonValueDisplay()
+    {
+        GameObject buttonHit = handScript.Button;
+        numpadScreen.text = buttonHit.name;
+        Debug.Log("Le bouton touché est " + buttonHit.name);
+    }
 
     /*
     [SerializeField]
@@ -54,5 +69,5 @@ public class NumpadScript : MonoBehaviour
 
     }
     */
-    
+
 }

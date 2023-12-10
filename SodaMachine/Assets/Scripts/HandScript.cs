@@ -6,6 +6,9 @@ public class HandScript : MonoBehaviour
     private Ray ray; // Rayon utilisé pour la détection de collision
     public RaycastHit hit; // L'objet qui a été touché par la collision
 
+    // Ajoutez cette ligne pour stocker le nom du bouton
+    public GameObject Button { get; private set; }
+
     [SerializeField]
     private Animator m_Animator;
 
@@ -14,6 +17,8 @@ public class HandScript : MonoBehaviour
     [SerializeField]
     private PlayerScript playerScript;
 
+    NumpadScript numpadScript;
+
     private bool itemIsInHand = false;
     //private bool itemIsOpened = false;
 
@@ -21,6 +26,7 @@ public class HandScript : MonoBehaviour
     {
         m_Animator = GetComponent<Animator>();
         playerScript = GetComponent<PlayerScript>();
+        numpadScript = FindObjectOfType<NumpadScript>();
     }
 
     private void Update()
@@ -48,9 +54,12 @@ public class HandScript : MonoBehaviour
                 }
 
                 // SI JE HIT LES BOUTONS DU PAVE NUMERIQUE
-                if (buttonScript != null) // si l'objet touché est le bouton
+                if (buttonScript != null)
                 {
-                    buttonScript.PlayButtonSound();
+                    Button = buttonScript.gameObject;
+                    buttonScript.PlayButtonBehavior();
+                    numpadScript.ButtonValueDisplay();
+
                 }
                 // SI JE HIT LE COLLECTEUR DE BOISSON
                 if (collectingTrayScript != null && collectingTrayScript.itemInCollectingTray == true)  // Si l'objet touché est le collecteur de boisson et qu'il y a un item dedans
@@ -69,12 +78,6 @@ public class HandScript : MonoBehaviour
                         itemIsInHand = true;
                     }
                 }
-
-                //si je réappuie est que la canette est dans ma main.
-                // J'ouvre la canette
-                // si j'appuie sur le collectingTrayScript est la canette est ouverte
-                // handscript.PlayDrinkingCanAnimation();
-                //playerAudioSource.PlayOneShot(drinkingSound);
             }
         }
     }
