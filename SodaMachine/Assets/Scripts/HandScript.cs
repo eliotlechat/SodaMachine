@@ -14,19 +14,19 @@ public class HandScript : MonoBehaviour
 
     private CollectingTrayScript collectingTrayScript;
 
-    [SerializeField]
+    
     private PlayerScript playerScript;
 
     private NumpadScript numpadScript;
 
-    private bool itemIsInHand = false;
-    //private bool itemIsOpened = false;
+    ItemScript itemScript;
 
     private void Start()
     {
         m_Animator = GetComponent<Animator>();
-        playerScript = GetComponent<PlayerScript>();
+        playerScript = FindObjectOfType<PlayerScript>();
         numpadScript = FindObjectOfType<NumpadScript>();
+        itemScript = FindObjectOfType<ItemScript>();
     }
 
     private void Update()
@@ -47,11 +47,20 @@ public class HandScript : MonoBehaviour
 
             if (Input.GetButtonDown("Fire1"))
             {
-                if (itemIsInHand == true)
+                if (itemScript.itemIsInHand == true && itemScript.itemIsOpened == true)
+
                 {
                     m_Animator.SetTrigger("Drinking");
                     StartCoroutine(playerScript.PlayDrinkingSound());
                 }
+
+                if (itemScript.itemIsInHand == true)
+                {
+                    itemScript.Open();
+                    itemScript.itemIsOpened = true;
+                }
+
+                
 
                 // SI JE HIT LES BOUTONS DU PAVE NUMERIQUE
                 if (buttonScript != null)
@@ -75,7 +84,7 @@ public class HandScript : MonoBehaviour
                         // le rb de l'item doit se désactiver
                         Rigidbody rb = collectingTrayScript.itemFalled.GetComponent<Rigidbody>();
                         rb.isKinematic = true;
-                        itemIsInHand = true;
+                        itemScript.itemIsInHand = true;
                     }
                 }
             }

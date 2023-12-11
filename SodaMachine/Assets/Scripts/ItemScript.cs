@@ -3,10 +3,13 @@ using UnityEngine;
 public abstract class ItemScript : MonoBehaviour
 {
     [SerializeField]
-    AudioSource itemAudioSource;
+    protected AudioSource itemAudioSource;
 
     [SerializeField]
     protected AudioClip itemFallSound;
+
+    public bool itemIsInHand = false;
+    public bool itemIsOpened = false;
 
 
     protected virtual void Start() // Il vaut mieux protected parce qu'il va y avoir un conflit avec l'enfant // virtual veut dire que cette méthode peut etre ovveride par un enfant
@@ -20,7 +23,7 @@ public abstract class ItemScript : MonoBehaviour
         itemAudioSource.PlayOneShot(itemFallSound);
     }
 
-    protected abstract void Open(); //Méthode qui devra être défini pour chacun des enfants. C'est plus clair.
+    public abstract void Open(); //Méthode qui devra être défini pour chacun des enfants. C'est plus clair.
 
     private void OnCollisionEnter(Collision collision)
     {

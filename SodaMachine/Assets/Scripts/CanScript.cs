@@ -6,6 +6,8 @@ public class CanScript : ItemScript
     [SerializeField]
     private GameObject openingTabCan;
 
+    
+
     [SerializeField]
     private AudioClip openTabSound;
 
@@ -15,11 +17,16 @@ public class CanScript : ItemScript
         base.Start();
     }
 
-    protected override void Open()
+    public override void Open()
 
     {
-        Debug.Log("J'entends le pshiit de la canette");
-        // déclencher l'animation
-        openingTabCan.GetComponent<Animator>().SetTrigger("openingTabEvent");
+        if(itemIsInHand && itemIsOpened ==  false)
+        {
+            itemAudioSource.PlayOneShot(openTabSound);
+
+            // déclencher l'animation
+            openingTabCan.GetComponent<Animator>().SetTrigger("openingTabEvent");
+        }
+        
     }
 }

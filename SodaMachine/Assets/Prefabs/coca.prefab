@@ -261,5 +261,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemAudioSource: {fileID: 0}
   itemFallSound: {fileID: 8300000, guid: ad469f929b5790b48a829dd8afc7387f, type: 3}
-  openingTabCan: {fileID: 0}
+  openingTabCan: {fileID: 4560614201976319934}
   openTabSound: {fileID: 8300000, guid: ea043a8aaf6256146bc0855efaf6c6a8, type: 3}
