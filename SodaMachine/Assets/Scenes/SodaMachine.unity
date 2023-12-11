@@ -1827,9 +1827,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54dca60c222dbf942816b004d6319413, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemsMovable: 1
+  itemsMovable: 0
   stock: {fileID: 1506476437}
-  numpadScript: {fileID: 1629331412}
 --- !u!1001 &815332315
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3278,7 +3277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numpadScreen: {fileID: 1951003900}
-  combination: 46
+  combination: 0
 --- !u!1001 &1632616095
 PrefabInstance:
   m_ObjectHideFlags: 0

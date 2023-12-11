@@ -12,6 +12,8 @@ public class NumpadScript : MonoBehaviour
 
     public int combination;
 
+    MachineScript machineScript;
+
     int buttonVal;
 
     List<int> buttonsValList = new List<int>();
@@ -19,6 +21,7 @@ public class NumpadScript : MonoBehaviour
     private void Start()
     {
         handScript = FindObjectOfType<HandScript>();
+        machineScript = FindObjectOfType<MachineScript>();
     }
 
     public void ButtonValueDisplay()
@@ -42,8 +45,10 @@ public class NumpadScript : MonoBehaviour
             string combinationAsString= combination.ToString();
             numpadScreen.text = combinationAsString;
             buttonsValList.Clear();
-            
+            machineScript.StackSearch();
+
         }
     }
 
 }
+
