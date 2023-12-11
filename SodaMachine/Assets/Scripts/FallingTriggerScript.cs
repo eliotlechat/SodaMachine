@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FallingTriggerScript : MonoBehaviour
 {
     [SerializeField]
-    MachineScript machineScript;
+    private MachineScript machineScript;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -13,6 +11,4 @@ public class FallingTriggerScript : MonoBehaviour
         rb.isKinematic = false;
         machineScript.itemsMovable = false;
     }
-
-
 }

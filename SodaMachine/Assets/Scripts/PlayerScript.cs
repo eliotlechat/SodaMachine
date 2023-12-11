@@ -20,6 +20,3 @@ public class PlayerScript : MonoBehaviour
         GetComponent<AudioSource>().PlayOneShot(drinkingSound);
     }
 }
-
-
-

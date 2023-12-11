@@ -10,21 +10,19 @@ public class CollectingTrayScript : MonoBehaviour
     [HideInInspector]
     public GameObject itemFalled; // ajout d'une variable pour stocker l'objet qui est dans le collecteur
 
-    AudioSource collectingTrayAudioSource;
+    private AudioSource collectingTrayAudioSource;
 
     [SerializeField]
-    AudioClip collectingTrayDoorSound;
+    private AudioClip collectingTrayDoorSound;
 
     private void Start()
     {
         collectingTrayAudioSource = GetComponent<AudioSource>();
-
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         itemFalled = collision.gameObject;
-        Debug.Log(itemFalled.name);
         OutlinerOn();
         itemInCollectingTray = true;
     }
@@ -48,6 +46,4 @@ public class CollectingTrayScript : MonoBehaviour
     {
         OutlinerOff();
     }
-
-
 }

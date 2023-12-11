@@ -17,7 +17,7 @@ public class HandScript : MonoBehaviour
     [SerializeField]
     private PlayerScript playerScript;
 
-    NumpadScript numpadScript;
+    private NumpadScript numpadScript;
 
     private bool itemIsInHand = false;
     //private bool itemIsOpened = false;
@@ -60,7 +60,6 @@ public class HandScript : MonoBehaviour
                     buttonScript.PlayButtonBehavior();
                     numpadScript.ButtonValueDisplay();
                     numpadScript.ButtonsValueCombination();
-
                 }
                 // SI JE HIT LE COLLECTEUR DE BOISSON
                 if (collectingTrayScript != null && collectingTrayScript.itemInCollectingTray == true)  // Si l'objet touché est le collecteur de boisson et qu'il y a un item dedans

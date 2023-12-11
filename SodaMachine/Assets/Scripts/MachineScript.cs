@@ -14,17 +14,13 @@ public class MachineScript : MonoBehaviour
     [SerializeField]
     private GameObject stock;
 
-    
-    NumpadScript numpadScript;
+    private NumpadScript numpadScript;
 
     private List<GameObject> items = new List<GameObject>();
 
     private void Start()
     {
-        numpadScript = FindObjectOfType<NumpadScript>(); // Pourquoi GetComponent ne marche pas 
-        input = numpadScript.combination;
-        Debug.Log("Le Montant tapé est " + input);
-        StackSearch();
+        numpadScript = FindObjectOfType<NumpadScript>(); // Pourquoi GetComponent ne marche pas
     }
 
     private void Update()
@@ -34,6 +30,7 @@ public class MachineScript : MonoBehaviour
 
     public void StackSearch()
     {
+        input = numpadScript.combination;
         foreach (Transform item in stock.transform)
         {
             if (item.name == input.ToString())
@@ -52,10 +49,7 @@ public class MachineScript : MonoBehaviour
 
             {
                 child.transform.Translate(Vector3.forward * canMovementDistance);
-
-                Debug.Log("La stack + " + foundItem + "est en marche ");
             }
         }
     }
 }
-

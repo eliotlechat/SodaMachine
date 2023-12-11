@@ -1,18 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CanScript : ItemScript
 {
     [Header("Les variables de CanScript")]
+    [SerializeField]
+    private GameObject openingTabCan;
 
     [SerializeField]
-    GameObject openingTabCan;
-
-    [SerializeField]
-    AudioClip openTabSound;
-
-    
+    private AudioClip openTabSound;
 
     protected override void Start() // Va écraser la méthode du parent
     {
@@ -23,11 +18,8 @@ public class CanScript : ItemScript
     protected override void Open()
 
     {
-
         Debug.Log("J'entends le pshiit de la canette");
-        // déclencher l'animation 
+        // déclencher l'animation
         openingTabCan.GetComponent<Animator>().SetTrigger("openingTabEvent");
     }
-
-    
 }
