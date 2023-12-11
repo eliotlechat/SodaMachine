@@ -5,7 +5,6 @@ public class MachineScript : MonoBehaviour
 {
     private float canMovementDistance = 0.001f;
 
-    [HideInInspector]
     public bool itemsMovable = false;
 
     private int input;
@@ -25,7 +24,7 @@ public class MachineScript : MonoBehaviour
         numpadScript = FindObjectOfType<NumpadScript>(); // Pourquoi GetComponent ne marche pas 
         input = numpadScript.combination;
         Debug.Log("Le Montant tapé est " + input);
-        
+        StackSearch();
     }
 
     private void Update()
@@ -41,7 +40,6 @@ public class MachineScript : MonoBehaviour
             {
                 foundItem = item;
                 Debug.Log("Objet trouvé: " + item.name);
-                itemsMovable = true;
             }
         }
     }
