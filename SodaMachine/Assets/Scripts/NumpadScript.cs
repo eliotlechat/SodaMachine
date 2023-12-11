@@ -6,6 +6,8 @@ using System;
 
 public class NumpadScript : MonoBehaviour
 {
+    [SerializeField]
+    MachineScript machineScript;
 
     private HandScript handScript;
     public TMP_Text numpadScreen;
@@ -19,6 +21,7 @@ public class NumpadScript : MonoBehaviour
     private void Start()
     {
         handScript = FindObjectOfType<HandScript>();
+        machineScript = FindObjectOfType<MachineScript>();
     }
 
     public void ButtonValueDisplay()
@@ -39,6 +42,8 @@ public class NumpadScript : MonoBehaviour
         if (buttonsValList.Count ==2)
         {
             combination = buttonsValList[0]*10 + buttonsValList[1];
+            machineScript.StackSearch();
+            machineScript.itemsMovable = true;
             string combinationAsString= combination.ToString();
             numpadScreen.text = combinationAsString;
             buttonsValList.Clear();
