@@ -1,10 +1,12 @@
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 
 public class MachineScript : MonoBehaviour
 {
     private float canMovementDistance = 0.001f;
 
+    [HideInInspector]
     public bool itemsMovable = false;
 
     private int input;
@@ -18,9 +20,12 @@ public class MachineScript : MonoBehaviour
 
     private List<GameObject> items = new List<GameObject>();
 
+
+
     private void Start()
     {
         numpadScript = FindObjectOfType<NumpadScript>(); // Pourquoi GetComponent ne marche pas
+        
     }
 
     private void Update()
@@ -41,10 +46,12 @@ public class MachineScript : MonoBehaviour
         }
     }
 
-    public void MoveItems()
+    private void MoveItems()
     {
+        
         if (itemsMovable && foundItem != null)
         {
+            
             foreach (Transform child in foundItem.transform)
 
             {
@@ -52,4 +59,6 @@ public class MachineScript : MonoBehaviour
             }
         }
     }
+
+    
 }

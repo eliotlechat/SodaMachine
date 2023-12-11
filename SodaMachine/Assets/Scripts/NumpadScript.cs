@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class NumpadScript : MonoBehaviour
 {
-    [SerializeField]
-    private MachineScript machineScript;
+    MachineScript machineScript;
 
     private HandScript handScript;
     public TMP_Text numpadScreen;
 
+    [HideInInspector]
     public int combination;
 
     private int buttonVal;
