@@ -47,7 +47,7 @@ public class HandScript : MonoBehaviour
 
             if (Input.GetButtonDown("Fire1"))
             {
-                if (itemScript.itemIsInHand == true && itemScript.itemIsOpened == true)
+                /*if (itemScript.itemIsInHand == true && itemScript.itemIsOpened == true)
 
                 {
                     m_Animator.SetTrigger("Drinking");
@@ -60,7 +60,7 @@ public class HandScript : MonoBehaviour
                     itemScript.itemIsOpened = true;
                 }
 
-                
+                */
 
                 // SI JE HIT LES BOUTONS DU PAVE NUMERIQUE
                 if (buttonScript != null)
