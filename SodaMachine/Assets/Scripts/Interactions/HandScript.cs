@@ -21,12 +21,18 @@ public class HandScript : MonoBehaviour
 
     ItemScript itemScript;
 
+    private bool hasDrunk = false;
+
     private void Start()
     {
         m_Animator = GetComponent<Animator>();
         playerScript = FindObjectOfType<PlayerScript>();
         numpadScript = FindObjectOfType<NumpadScript>();
         itemScript = FindObjectOfType<ItemScript>();
+
+        Debug.Log("Initial hasDrunk: " + hasDrunk);
+        Debug.Log("Initial itemIsInHand: " + itemScript.itemIsInHand);
+        Debug.Log("Initial itemIsOpened: " + itemScript.itemIsOpened);
     }
 
     private void Update()
@@ -47,21 +53,39 @@ public class HandScript : MonoBehaviour
 
             if (Input.GetButtonDown("Fire1"))
             {
-                /*if (itemScript.itemIsInHand == true && itemScript.itemIsOpened == true)
+                Debug.Log("Fire1 button pressed");
+
+                // Handle the burping sound
+                if (hasDrunk == true)
+                {
+                    Debug.Log("Playing burp sound");
+                    StartCoroutine(playerScript.PlayBurpSound());
+                    return; // Exit to prevent further actions when hasDrunk is true
+                }
+
+                // Handle the drinking action
+                if (itemScript.itemIsInHand == true && itemScript.itemIsOpened == true && hasDrunk == false)
 
                 {
+                    Debug.Log("Playing drinking sound and animation");
                     m_Animator.SetTrigger("Drinking");
                     StartCoroutine(playerScript.PlayDrinkingSound());
+                    hasDrunk = true;
+                    Debug.Log("hasDrunk set to true");
+                    return;
                 }
 
-                if (itemScript.itemIsInHand == true)
+                // Handle the item opening action
+                if (itemScript.itemIsInHand == true && itemScript.itemIsOpened ==  false)
                 {
+                    Debug.Log("Opening item");
                     itemScript.Open();
                     itemScript.itemIsOpened = true;
+                    return;
                 }
 
-                */
 
+                // Handle button interaction
                 // SI JE HIT LES BOUTONS DU PAVE NUMERIQUE
                 if (buttonScript != null)
                 {
@@ -69,7 +93,10 @@ public class HandScript : MonoBehaviour
                     buttonScript.PlayButtonBehavior();
                     numpadScript.ButtonValueDisplay();
                     numpadScript.ButtonsValueCombination();
+                    return;
                 }
+
+                // Handle collecting tray interaction
                 // SI JE HIT LE COLLECTEUR DE BOISSON
                 if (collectingTrayScript != null && collectingTrayScript.itemInCollectingTray == true)  // Si l'objet touché est le collecteur de boisson et qu'il y a un item dedans
                 {
@@ -85,8 +112,11 @@ public class HandScript : MonoBehaviour
                         Rigidbody rb = collectingTrayScript.itemFalled.GetComponent<Rigidbody>();
                         rb.isKinematic = true;
                         itemScript.itemIsInHand = true;
+                        return;
                     }
                 }
+
+              
             }
         }
     }
