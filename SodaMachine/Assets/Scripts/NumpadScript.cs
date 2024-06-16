@@ -45,4 +45,10 @@ public class NumpadScript : MonoBehaviour
             buttonsValList.Clear();
         }
     }
+    /*
+    public void DisplayObjectPrice()
+    {
+
+    }
+    */
 }

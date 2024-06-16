@@ -1,9 +1,11 @@
-/*
+/* corriger le bug de la ArgumentNulleException 1 fois sur 2 ligne 131
+ * comprendre ce que ca veut dire return
  * 
+ * Afficher le montant de la boisson
+ * empêcher d'obtenir la boisson si je ne paie pas. 
+ * est ce que je fais un UML 
  * 
- * 
- * 
- * 
+ *   
  * 
  * 
  * 
@@ -16,10 +18,8 @@
  * 
  */
 
-/* plus tard afficher le montant de la boisson 
- * Trouver une méthode qui paie sur lorsque j'appuie sur une touche et que je suis devant. Animation de la carte.
+/* 
  * 
- * Gérér tous les bugs. 
  * 
  * Je pense qu'avant je dois comprendre les unity events et les accesseurs. les design patterns ("singletons")
  * 

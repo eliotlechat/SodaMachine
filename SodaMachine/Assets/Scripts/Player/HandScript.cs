@@ -22,22 +22,27 @@ public class HandScript : MonoBehaviour
     ItemScript itemScript;
 
     private bool hasDrunk = false;
+    private bool isDrinking = false;
 
     private void Start()
     {
         m_Animator = GetComponent<Animator>();
         playerScript = FindObjectOfType<PlayerScript>();
         numpadScript = FindObjectOfType<NumpadScript>();
-        itemScript = FindObjectOfType<ItemScript>();
+        
 
         Debug.Log("Initial hasDrunk: " + hasDrunk);
-        Debug.Log("Initial itemIsInHand: " + itemScript.itemIsInHand);
-        Debug.Log("Initial itemIsOpened: " + itemScript.itemIsOpened);
+        Debug.Log("ItemScript will be initialized later when it's available.");
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     private void Update()
     {
-        ShootRayFromScreenCenter();
+        if (Application.isFocused)
+        {
+            ShootRayFromScreenCenter();
+        }
+        
     }
 
     public void ShootRayFromScreenCenter()
@@ -55,8 +60,10 @@ public class HandScript : MonoBehaviour
             {
                 Debug.Log("Fire1 button pressed");
 
+                itemScript = FindObjectOfType<ItemScript>();
+
                 // Handle the burping sound
-                if (hasDrunk == true)
+                if (hasDrunk == true && !isDrinking)
                 {
                     Debug.Log("Playing burp sound");
                     StartCoroutine(playerScript.PlayBurpSound());
@@ -64,14 +71,11 @@ public class HandScript : MonoBehaviour
                 }
 
                 // Handle the drinking action
-                if (itemScript.itemIsInHand == true && itemScript.itemIsOpened == true && hasDrunk == false)
+                if (itemScript.itemIsInHand && itemScript.itemIsOpened && !hasDrunk && !isDrinking)
 
                 {
-                    Debug.Log("Playing drinking sound and animation");
-                    m_Animator.SetTrigger("Drinking");
-                    StartCoroutine(playerScript.PlayDrinkingSound());
-                    hasDrunk = true;
-                    Debug.Log("hasDrunk set to true");
+                    Debug.Log("Starting drinking process");
+                    StartCoroutine(HandleDrinking());
                     return;
                 }
 
@@ -93,6 +97,7 @@ public class HandScript : MonoBehaviour
                     buttonScript.PlayButtonBehavior();
                     numpadScript.ButtonValueDisplay();
                     numpadScript.ButtonsValueCombination();
+                    // DisplayObjectPrice si la buttonsValueCombination est terminé
                     return;
                 }
 
@@ -135,4 +140,19 @@ public class HandScript : MonoBehaviour
     {
         m_Animator.SetTrigger("Drinking");
     }
+
+    private IEnumerator HandleDrinking()
+    {
+        isDrinking = true;
+        Debug.Log("Playing drinking sound and animation");
+        m_Animator.SetTrigger("Drinking");
+        yield return StartCoroutine(playerScript.PlayDrinkingSound()); // Wait for the drinking sound to finish
+        hasDrunk = true;
+        Debug.Log("hasDrunk set to true");
+        isDrinking = false;
+    }
+    
+                    
+   
+                    
 }

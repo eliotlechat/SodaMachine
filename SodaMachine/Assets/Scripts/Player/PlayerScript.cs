@@ -22,9 +22,12 @@ public class PlayerScript : MonoBehaviour
     public IEnumerator PlayDrinkingSound()
     {
         Debug.Log("PlayDrinkingSound called");
-        
         yield return new WaitForSeconds(1.5f);
-        GetComponent<AudioSource>().PlayOneShot(drinkingSound);
+        playerAudioSource.PlayOneShot(drinkingSound);
+
+        yield return new WaitWhile(()=>playerAudioSource.isPlaying);
+        Debug.Log("Drinking sound finished");
+
     }
 
     public IEnumerator PlayBurpSound()
