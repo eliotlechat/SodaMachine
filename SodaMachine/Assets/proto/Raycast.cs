@@ -16,15 +16,15 @@ public class Raycast: MonoBehaviour
     public void ShootRayFromScreenCenter()
     {
         
-        if (Input.GetButtonDown("Fire1")) // Si je clique gauche
+        if (Input.GetButtonDown("Fire1")) 
         {
-            
-            // Créer un rayon à partir du centre de l'écran
+
+            // Create a ray from the center of the screen
             Vector2 ScreenCenterPoint = new Vector2(Screen.width / 2, Screen.height / 2);
             ray = Camera.main.ScreenPointToRay(ScreenCenterPoint);
 
             
-            if (Physics.Raycast(ray, out hit, Camera.main.farClipPlane)) // Si le rayon touche un objet
+            if (Physics.Raycast(ray, out hit, Camera.main.farClipPlane)) // if the ray touch an object
             {
                 // ***** Là c'est la partie la plus cruciale qui m'intéresse le plus *******
                 RaycastDetectScript raycastDetectScript = hit.transform.GetComponent<RaycastDetectScript>();

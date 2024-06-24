@@ -95,9 +95,12 @@ public class HandScript : MonoBehaviour
                 {
                     Button = buttonScript.gameObject;
                     buttonScript.PlayButtonBehavior();
-                    numpadScript.ButtonValueDisplay();
+                    numpadScript.DisplayButtonValue();
                     numpadScript.ButtonsValueCombination();
-                    // DisplayObjectPrice si la buttonsValueCombination est terminé
+
+                    
+
+
                     return;
                 }
 
@@ -112,11 +115,17 @@ public class HandScript : MonoBehaviour
                         Debug.Log("l'item qui va popper dans ma main est : " + collectingTrayScript.itemFalled.name);
 
                         StartCoroutine(SpawnInHand());
-                        collectingTrayScript.PlayCollectingTrayDoorSound();
+
+                        if (collectingTrayScript.itemInCollectingTray)
+                        {
+                            collectingTrayScript.PlayCollectingTrayDoorSound();
+                        }
+                        
                         // le rb de l'item doit se désactiver
                         Rigidbody rb = collectingTrayScript.itemFalled.GetComponent<Rigidbody>();
                         rb.isKinematic = true;
                         itemScript.itemIsInHand = true;
+                        collectingTrayScript.itemInCollectingTray = false;
                         return;
                     }
                 }

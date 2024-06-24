@@ -17,6 +17,7 @@ public class MachineScript : MonoBehaviour
     private GameObject stock;
 
     private NumpadScript numpadScript;
+    private CardReader cardReader;
 
     private List<GameObject> items = new List<GameObject>();
 
@@ -25,7 +26,7 @@ public class MachineScript : MonoBehaviour
     private void Start()
     {
         numpadScript = FindObjectOfType<NumpadScript>(); // Pourquoi GetComponent ne marche pas
-        
+        cardReader = FindObjectOfType<CardReader >();
     }
 
     private void Update()
@@ -49,7 +50,7 @@ public class MachineScript : MonoBehaviour
     private void MoveItems()
     {
         
-        if (itemsMovable && foundItem != null)
+        if (itemsMovable && foundItem != null && cardReader.paymentCardDetected)
         {
             
             foreach (Transform child in foundItem.transform)

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using System.Collections;
 
 public class NumpadScript : MonoBehaviour
 {
@@ -12,9 +13,18 @@ public class NumpadScript : MonoBehaviour
     [HideInInspector]
     public int combination;
 
+    public bool isPriceDisplayed = false;
+
+    const float itemPrice = 2.30f;
+
     private int buttonVal;
 
     private List<int> buttonsValList = new List<int>();
+
+    public bool isCombinationFormed = false;
+
+
+
 
     private void Start()
     {
@@ -22,7 +32,7 @@ public class NumpadScript : MonoBehaviour
         machineScript = FindObjectOfType<MachineScript>();
     }
 
-    public void ButtonValueDisplay()
+    public void DisplayButtonValue()
     {
         GameObject buttonHit = handScript.Button;
         string buttonName = buttonHit.name.ToString();
@@ -43,12 +53,30 @@ public class NumpadScript : MonoBehaviour
             machineScript.itemsMovable = true;
             numpadScreen.text = combinationAsString;
             buttonsValList.Clear();
+
+            Debug.Log("The object has been selected");
+            StartCoroutine(DisplayItemPriceWithDelay());
+
         }
     }
-    /*
-    public void DisplayObjectPrice()
+
+    private IEnumerator DisplayItemPriceWithDelay()
     {
 
+        yield return new WaitForSeconds(0.5f);
+        numpadScreen.text = itemPrice.ToString();
+        isPriceDisplayed = true;
+
     }
-    */
+
+    public void ResetScreen()
+    {
+        numpadScreen.text = "";
+        isPriceDisplayed= false;
+        buttonsValList.Clear();
+        combination = 0;
+        isCombinationFormed = false;
+    }
+
+    
 }
