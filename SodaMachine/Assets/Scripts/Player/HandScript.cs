@@ -14,12 +14,11 @@ public class HandScript : MonoBehaviour
 
     private CollectingTrayScript collectingTrayScript;
 
-    
     private PlayerScript playerScript;
 
     private NumpadScript numpadScript;
 
-    ItemScript itemScript;
+    private ItemScript itemScript;
 
     private bool hasDrunk = false;
     private bool isDrinking = false;
@@ -29,7 +28,6 @@ public class HandScript : MonoBehaviour
         m_Animator = GetComponent<Animator>();
         playerScript = FindObjectOfType<PlayerScript>();
         numpadScript = FindObjectOfType<NumpadScript>();
-        
 
         Debug.Log("Initial hasDrunk: " + hasDrunk);
         Debug.Log("ItemScript will be initialized later when it's available.");
@@ -41,8 +39,8 @@ public class HandScript : MonoBehaviour
         if (Application.isFocused)
         {
             ShootRayFromScreenCenter();
+            HandleActions();
         }
-        
     }
 
     public void ShootRayFromScreenCenter()
@@ -58,39 +56,7 @@ public class HandScript : MonoBehaviour
 
             if (Input.GetButtonDown("Fire1"))
             {
-                Debug.Log("Fire1 button pressed");
-
-                itemScript = FindObjectOfType<ItemScript>();
-
-                // Handle the burping sound
-                if (hasDrunk == true && !isDrinking)
-                {
-                    Debug.Log("Playing burp sound");
-                    StartCoroutine(playerScript.PlayBurpSound());
-                    return; // Exit to prevent further actions when hasDrunk is true
-                }
-
-                // Handle the drinking action
-                if (itemScript.itemIsInHand && itemScript.itemIsOpened && !hasDrunk && !isDrinking)
-
-                {
-                    Debug.Log("Starting drinking process");
-                    StartCoroutine(HandleDrinking());
-                    return;
-                }
-
-                // Handle the item opening action
-                if (itemScript.itemIsInHand == true && itemScript.itemIsOpened ==  false)
-                {
-                    Debug.Log("Opening item");
-                    itemScript.Open();
-                    itemScript.itemIsOpened = true;
-                    return;
-                }
-
-
-                // Handle button interaction
-                // SI JE HIT LES BOUTONS DU PAVE NUMERIQUE
+                // if I hit the numpad
                 if (buttonScript != null)
                 {
                     Button = buttonScript.gameObject;
@@ -98,14 +64,10 @@ public class HandScript : MonoBehaviour
                     numpadScript.DisplayButtonValue();
                     numpadScript.ButtonsValueCombination();
 
-                    
-
-
                     return;
                 }
 
-                // Handle collecting tray interaction
-                // SI JE HIT LE COLLECTEUR DE BOISSON
+                // if I hit the collectingTray
                 if (collectingTrayScript != null && collectingTrayScript.itemInCollectingTray == true)  // Si l'objet touché est le collecteur de boisson et qu'il y a un item dedans
                 {
                     collectingTrayScript.OutlinerOff();
@@ -120,8 +82,8 @@ public class HandScript : MonoBehaviour
                         {
                             collectingTrayScript.PlayCollectingTrayDoorSound();
                         }
-                        
-                        // le rb de l'item doit se désactiver
+
+                        // Disabling rb
                         Rigidbody rb = collectingTrayScript.itemFalled.GetComponent<Rigidbody>();
                         rb.isKinematic = true;
                         itemScript.itemIsInHand = true;
@@ -129,8 +91,71 @@ public class HandScript : MonoBehaviour
                         return;
                     }
                 }
+            }
+        }
 
-              
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            itemScript = FindObjectOfType<ItemScript>();
+
+            // Handle the burping sound
+            if (hasDrunk == true && !isDrinking)
+            {
+                Debug.Log("Playing burp sound");
+                StartCoroutine(playerScript.PlayBurpSound());
+                return; // Exit to prevent further actions when hasDrunk is true
+            }
+
+            // Handle the drinking action
+            if (itemScript.itemIsInHand && itemScript.itemIsOpened && !hasDrunk && !isDrinking)
+
+            {
+                Debug.Log("Starting drinking process");
+                StartCoroutine(HandleDrinking());
+                return;
+            }
+
+            // Handle the item opening action
+            if (itemScript.itemIsInHand == true && itemScript.itemIsOpened == false)
+            {
+                Debug.Log("Opening item");
+                itemScript.Open();
+                itemScript.itemIsOpened = true;
+                return;
+            }
+        }
+    }
+
+    public void HandleActions()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            itemScript = FindObjectOfType<ItemScript>();
+
+            // Handle the burping sound
+            if (hasDrunk == true && !isDrinking)
+            {
+                Debug.Log("Playing burp sound");
+                StartCoroutine(playerScript.PlayBurpSound());
+                return; // Exit to prevent further actions when hasDrunk is true
+            }
+
+            // Handle the drinking action
+            if (itemScript.itemIsInHand && itemScript.itemIsOpened && !hasDrunk && !isDrinking)
+
+            {
+                Debug.Log("Starting drinking process");
+                StartCoroutine(HandleDrinking());
+                return;
+            }
+
+            // Handle the item opening action
+            if (itemScript.itemIsInHand == true && itemScript.itemIsOpened == false)
+            {
+                Debug.Log("Opening item");
+                itemScript.Open();
+                itemScript.itemIsOpened = true;
+                return;
             }
         }
     }
@@ -160,8 +185,4 @@ public class HandScript : MonoBehaviour
         Debug.Log("hasDrunk set to true");
         isDrinking = false;
     }
-    
-                    
-   
-                    
 }
