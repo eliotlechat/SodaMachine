@@ -2,14 +2,14 @@
  
 
  Priorité : 
- 1_Comprendre comment on recommence une fois bu 
- 2_ Comment on affiche une interface pour le joueur. et aussi changer les raccourcis 
+ 1_ Comprendre comment on recommence une fois bu 
+ 2_ Gérer les textes actions sur l'interface 
  3_ Comprendre les TextMeshPro : comment on affiche, on passe à la suite etc... 
  4_ Comprendre les listes pour les boissons. 
 
 
  * Mettre choisissez votre boisson 
- * Mettre un bruit sourd de distributeur automatique
+ * 
  * Mettre un texte Veuillez Payer. 
  * Mettre un texte Vous avez selectionnez
  * Une fois que j'ai burp, je n'arrive pas à reutiliser la machine
