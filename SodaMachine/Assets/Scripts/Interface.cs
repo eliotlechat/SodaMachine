@@ -1,9 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+
 
 public class Interface : MonoBehaviour
 {
+
+    
+    public TMP_Text actionText;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +21,19 @@ public class Interface : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void DisplayOpenItemText()
+    {
+        actionText.text = "Press E to open";
+    }
+    public void DisplayDrinkText()
+    {
+        actionText.text = "Press E to drink";
+    }
+
+    public void DisplayBurpText()
+    {
+        actionText.text = "Press E to burp";
     }
 }

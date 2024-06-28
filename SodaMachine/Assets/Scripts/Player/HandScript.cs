@@ -12,6 +12,9 @@ public class HandScript : MonoBehaviour
     [SerializeField]
     private Animator m_Animator;
 
+    [SerializeField]
+    Interface interfaceScript;
+
     private CollectingTrayScript collectingTrayScript;
 
     private PlayerScript playerScript;
@@ -28,10 +31,12 @@ public class HandScript : MonoBehaviour
         m_Animator = GetComponent<Animator>();
         playerScript = FindObjectOfType<PlayerScript>();
         numpadScript = FindObjectOfType<NumpadScript>();
+        
 
         Debug.Log("Initial hasDrunk: " + hasDrunk);
         Debug.Log("ItemScript will be initialized later when it's available.");
         Cursor.lockState = CursorLockMode.Confined;
+        
     }
 
     private void Update()
@@ -70,6 +75,7 @@ public class HandScript : MonoBehaviour
                 // if I hit the collectingTray
                 if (collectingTrayScript != null && collectingTrayScript.itemInCollectingTray == true)  // Si l'objet touché est le collecteur de boisson et qu'il y a un item dedans
                 {
+                    interfaceScript.DisplayOpenItemText();
                     collectingTrayScript.OutlinerOff();
 
                     if (collectingTrayScript.itemFalled != null)
@@ -88,6 +94,7 @@ public class HandScript : MonoBehaviour
                         rb.isKinematic = true;
                         itemScript.itemIsInHand = true;
                         collectingTrayScript.itemInCollectingTray = false;
+                        
                         return;
                     }
                 }
@@ -100,7 +107,8 @@ public class HandScript : MonoBehaviour
 
             // Handle the burping sound
             if (hasDrunk == true && !isDrinking)
-            {
+            { 
+                
                 Debug.Log("Playing burp sound");
                 StartCoroutine(playerScript.PlayBurpSound());
                 return; // Exit to prevent further actions when hasDrunk is true
@@ -112,6 +120,7 @@ public class HandScript : MonoBehaviour
             {
                 Debug.Log("Starting drinking process");
                 StartCoroutine(HandleDrinking());
+                interfaceScript.DisplayBurpText();
                 return;
             }
 
@@ -121,6 +130,7 @@ public class HandScript : MonoBehaviour
                 Debug.Log("Opening item");
                 itemScript.Open();
                 itemScript.itemIsOpened = true;
+                interfaceScript.DisplayDrinkText();
                 return;
             }
         }
