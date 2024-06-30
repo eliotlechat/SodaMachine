@@ -1,23 +1,29 @@
-/* corriger le bug de la ArgumentNulleException 1 fois sur 2 ligne 131
+/* 
  
 
- Priorité : 
- 1_ Comprendre comment on recommence une fois bu 
- 2_ Gérer les textes actions sur l'interface 
- 3_ Comprendre les TextMeshPro : comment on affiche, on passe à la suite etc... 
- 4_ Comprendre les listes pour les boissons. 
+Priorité : 
+
+_ Comprendre les listes pour les boissons et gérer les différents montants
+_ Comprendre comment on recommence une fois bu
+_ bouteilles d'eau, paquet de chips,
+_ Faire apparaitre une animation d'ouverture de canette et particule ? 
+ 
 
 
- * Mettre choisissez votre boisson 
+BUGS :
+
+- corriger le bug de la ArgumentNulleException 1 fois sur 2 ligne 131
+- Une fois que j'ai burp, je n'arrive pas à reutiliser la machine
+- Je n'arrive pas 1 fois sur 2 à utiliser le pavé numérique
+
+
  * 
- * Mettre un texte Veuillez Payer. 
- * Mettre un texte Vous avez selectionnez
- * Une fois que j'ai burp, je n'arrive pas à reutiliser la machine
- * Créer une interface player
- * Faire la liste des montants et mettre €
+
+ * 
  * Le violet sera le plus cher
  *  
  * est ce que je fais un UML 
+ * Comment on peut améliorer l'organisation.
  * 
  *   
  * 
@@ -45,5 +51,6 @@
 
 * Créer des bouteilles d'eau
 * 
-* Faire une machine Nespresso 
+* 
+* 
 */

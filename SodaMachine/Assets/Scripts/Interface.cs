@@ -36,4 +36,14 @@ public class Interface : MonoBehaviour
     {
         actionText.text = "Press E to burp";
     }
+
+    public void DisplayPaymentText()
+    {
+        actionText.text = "Press E to pay using contactless";
+    }
+
+    public void ClearText()
+    {
+        actionText.text = "";
+    }
 }

@@ -30,14 +30,14 @@ public class PlayerScript : MonoBehaviour
 
     }
 
-    public IEnumerator PlayBurpSound()
+    public void PlayBurpSound()
     {
 
     if (!hasBurped)
         {
             hasBurped=true;
             Debug.Log("PlayBurpSound called");
-            yield return new WaitForSeconds(0f);
+            
             GetComponent<AudioSource>().PlayOneShot(burpSound);
         }
     else

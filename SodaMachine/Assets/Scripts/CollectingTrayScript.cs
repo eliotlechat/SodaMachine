@@ -15,9 +15,12 @@ public class CollectingTrayScript : MonoBehaviour
     [SerializeField]
     private AudioClip collectingTrayDoorSound;
 
+    Interface interfaceScript;
+
     private void Start()
     {
         collectingTrayAudioSource = GetComponent<AudioSource>();
+        interfaceScript = FindObjectOfType<Interface>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -25,6 +28,8 @@ public class CollectingTrayScript : MonoBehaviour
         itemFalled = collision.gameObject;
         OutlinerOn();
         itemInCollectingTray = true;
+        interfaceScript.ClearText();
+
     }
 
     public void PlayCollectingTrayDoorSound()

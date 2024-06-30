@@ -11,11 +11,15 @@ public abstract class ItemScript : MonoBehaviour
     public bool itemIsInHand = false;
     public bool itemIsOpened = false;
 
+    
+    
+
 
     protected virtual void Start() // Il vaut mieux protected parce qu'il va y avoir un conflit avec l'enfant // virtual veut dire que cette méthode peut etre ovveride par un enfant
     {
         itemAudioSource = GetComponent<AudioSource>();
         if (itemAudioSource == null) itemAudioSource = gameObject.AddComponent<AudioSource>();
+        
     }
 
     private void PlayFallSound()
@@ -30,6 +34,7 @@ public abstract class ItemScript : MonoBehaviour
         if (collision.gameObject.GetComponent<CollectingTrayScript>() != null)
         {
             PlayFallSound();
+            
         }
     }
 }

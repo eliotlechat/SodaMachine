@@ -13,7 +13,7 @@ public class HandScript : MonoBehaviour
     private Animator m_Animator;
 
     [SerializeField]
-    Interface interfaceScript;
+    private Interface interfaceScript;
 
     private CollectingTrayScript collectingTrayScript;
 
@@ -31,12 +31,10 @@ public class HandScript : MonoBehaviour
         m_Animator = GetComponent<Animator>();
         playerScript = FindObjectOfType<PlayerScript>();
         numpadScript = FindObjectOfType<NumpadScript>();
-        
 
         Debug.Log("Initial hasDrunk: " + hasDrunk);
         Debug.Log("ItemScript will be initialized later when it's available.");
         Cursor.lockState = CursorLockMode.Confined;
-        
     }
 
     private void Update()
@@ -94,44 +92,10 @@ public class HandScript : MonoBehaviour
                         rb.isKinematic = true;
                         itemScript.itemIsInHand = true;
                         collectingTrayScript.itemInCollectingTray = false;
-                        
+
                         return;
                     }
                 }
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            itemScript = FindObjectOfType<ItemScript>();
-
-            // Handle the burping sound
-            if (hasDrunk == true && !isDrinking)
-            { 
-                
-                Debug.Log("Playing burp sound");
-                StartCoroutine(playerScript.PlayBurpSound());
-                return; // Exit to prevent further actions when hasDrunk is true
-            }
-
-            // Handle the drinking action
-            if (itemScript.itemIsInHand && itemScript.itemIsOpened && !hasDrunk && !isDrinking)
-
-            {
-                Debug.Log("Starting drinking process");
-                StartCoroutine(HandleDrinking());
-                interfaceScript.DisplayBurpText();
-                return;
-            }
-
-            // Handle the item opening action
-            if (itemScript.itemIsInHand == true && itemScript.itemIsOpened == false)
-            {
-                Debug.Log("Opening item");
-                itemScript.Open();
-                itemScript.itemIsOpened = true;
-                interfaceScript.DisplayDrinkText();
-                return;
             }
         }
     }
@@ -146,7 +110,8 @@ public class HandScript : MonoBehaviour
             if (hasDrunk == true && !isDrinking)
             {
                 Debug.Log("Playing burp sound");
-                StartCoroutine(playerScript.PlayBurpSound());
+                playerScript.PlayBurpSound();
+                interfaceScript.ClearText();
                 return; // Exit to prevent further actions when hasDrunk is true
             }
 
@@ -156,6 +121,7 @@ public class HandScript : MonoBehaviour
             {
                 Debug.Log("Starting drinking process");
                 StartCoroutine(HandleDrinking());
+
                 return;
             }
 
@@ -164,6 +130,7 @@ public class HandScript : MonoBehaviour
             {
                 Debug.Log("Opening item");
                 itemScript.Open();
+                interfaceScript.DisplayDrinkText();
                 itemScript.itemIsOpened = true;
                 return;
             }
@@ -180,19 +147,22 @@ public class HandScript : MonoBehaviour
         Debug.Log("Ca spawn dans ma main");
     }
 
-    public void PlayDrinkingItemAnimation()
-    {
-        m_Animator.SetTrigger("Drinking");
-    }
 
     private IEnumerator HandleDrinking()
     {
+        
         isDrinking = true;
+        interfaceScript.ClearText();
         Debug.Log("Playing drinking sound and animation");
         m_Animator.SetTrigger("Drinking");
         yield return StartCoroutine(playerScript.PlayDrinkingSound()); // Wait for the drinking sound to finish
         hasDrunk = true;
         Debug.Log("hasDrunk set to true");
         isDrinking = false;
+        interfaceScript.DisplayBurpText();
     }
+
+    //Debug.Log("Drinking audio finished");
+      //  interfaceScript.DisplayBurpText();
+
 }

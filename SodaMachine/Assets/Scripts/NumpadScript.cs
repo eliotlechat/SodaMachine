@@ -23,6 +23,8 @@ public class NumpadScript : MonoBehaviour
 
     public bool isCombinationFormed = false;
 
+    Interface interfaceScript; 
+
 
 
 
@@ -30,6 +32,7 @@ public class NumpadScript : MonoBehaviour
     {
         handScript = FindObjectOfType<HandScript>();
         machineScript = FindObjectOfType<MachineScript>();
+        interfaceScript = FindObjectOfType<Interface>();
     }
 
     public void DisplayButtonValue()
@@ -66,6 +69,7 @@ public class NumpadScript : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         numpadScreen.text = itemPrice.ToString();
         isPriceDisplayed = true;
+        interfaceScript.DisplayPaymentText();
 
     }
 
