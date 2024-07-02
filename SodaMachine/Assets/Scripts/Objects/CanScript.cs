@@ -8,7 +8,9 @@ public class CanScript : ItemScript
     [SerializeField]
     private AudioClip openTabSound;
 
+    [SerializeField] 
     Animator tabAnimator;
+
 
     protected override void Start() // Va écraser la méthode du parent
     {
@@ -21,22 +23,13 @@ public class CanScript : ItemScript
     {
         if(itemIsInHand && itemIsOpened ==  false)
         {
-            InitializeTabAnimator();
-
             itemAudioSource.PlayOneShot(openTabSound);
 
             tabAnimator.SetTrigger("OpenTab");
 
             itemIsOpened = true;
         }
-        
     }
 
-    void InitializeTabAnimator()
-    {
-        if(tabAnimator ==  null)
-        {
-            tabAnimator = GetComponentInChildren<Animator>();
-        }
-    }
+
 }
