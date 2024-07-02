@@ -1,15 +1,14 @@
+using TMPro;
 using UnityEngine;
 
 public class CanScript : ItemScript
 {
     [Header("Les variables de CanScript")]
-    [SerializeField]
-    private GameObject openingTabCan;
-
-    
 
     [SerializeField]
     private AudioClip openTabSound;
+
+    Animator tabAnimator;
 
     protected override void Start() // Va écraser la méthode du parent
     {
@@ -22,11 +21,22 @@ public class CanScript : ItemScript
     {
         if(itemIsInHand && itemIsOpened ==  false)
         {
+            InitializeTabAnimator();
+
             itemAudioSource.PlayOneShot(openTabSound);
 
-            // déclencher l'animation
-            openingTabCan.GetComponent<Animator>().SetTrigger("openingTabEvent");
+            tabAnimator.SetTrigger("OpenTab");
+
+            itemIsOpened = true;
         }
         
+    }
+
+    void InitializeTabAnimator()
+    {
+        if(tabAnimator ==  null)
+        {
+            tabAnimator = GetComponentInChildren<Animator>();
+        }
     }
 }
