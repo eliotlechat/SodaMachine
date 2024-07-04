@@ -1,5 +1,9 @@
 /* 
  
+COmprendre pk c'est l'autre canette qui s'ouvre et c'est tjrs la même.  
+Comprendre les breakpoints pour savoir comment le code se déroule et du coup verifier les variables.
+Approfondir le syst_me de nommage 
+Et forcer que ce soit l'opercule qui est enfant de la canette qui s'anime.
 
 Priorité : 
 
