@@ -3,11 +3,10 @@ using UnityEngine;
 
 public class HandScript : MonoBehaviour
 {
-    private Ray ray; // Rayon utilisé pour la détection de collision
-    public RaycastHit hit; // L'objet qui a été touché par la collision
-
-    // Ajoutez cette ligne pour stocker le nom du bouton
-    public GameObject Button { get; private set; }
+    private Ray ray; 
+    public RaycastHit hit; // The object hit by the collision
+    
+    public GameObject Button { get; private set; } // button of numpad
 
     [SerializeField]
     private Animator m_Animator;
@@ -21,19 +20,21 @@ public class HandScript : MonoBehaviour
 
     private NumpadScript numpadScript;
 
-    private ItemScript itemScript;
+    private GameObject itemToSpawnInHand;
+
+    private ItemScript itemInHandScript;
+
+    
 
     private bool hasDrunk = false;
     private bool isDrinking = false;
 
     private void Start()
     {
-        m_Animator = GetComponent<Animator>();
+        
         playerScript = FindObjectOfType<PlayerScript>();
         numpadScript = FindObjectOfType<NumpadScript>();
 
-        Debug.Log("Initial hasDrunk: " + hasDrunk);
-        Debug.Log("ItemScript will be initialized later when it's available.");
         Cursor.lockState = CursorLockMode.Confined;
     }
 
@@ -46,6 +47,8 @@ public class HandScript : MonoBehaviour
         }
     }
 
+    
+    
     public void ShootRayFromScreenCenter()
 
     {
@@ -89,8 +92,15 @@ public class HandScript : MonoBehaviour
 
                         // Disabling rb
                         Rigidbody rb = collectingTrayScript.itemFalled.GetComponent<Rigidbody>();
+
                         rb.isKinematic = true;
-                        itemScript.itemIsInHand = true;
+
+                        itemToSpawnInHand = collectingTrayScript.itemFalled;
+
+                        itemInHandScript = itemToSpawnInHand.GetComponent<ItemScript>();
+
+                        itemInHandScript.itemIsInHand = true;
+
                         collectingTrayScript.itemInCollectingTray = false;
 
                         return;
@@ -104,34 +114,33 @@ public class HandScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            itemScript = FindObjectOfType<ItemScript>();
 
             // Handle the burping sound
             if (hasDrunk == true && !isDrinking)
             {
-                Debug.Log("Playing burp sound");
+       
                 playerScript.PlayBurpSound();
                 interfaceScript.ClearText();
                 return; // Exit to prevent further actions when hasDrunk is true
             }
 
             // Handle the drinking action
-            if (itemScript.itemIsInHand && itemScript.itemIsOpened && !hasDrunk && !isDrinking)
+            if (itemInHandScript.itemIsInHand && itemInHandScript.itemIsOpened && !hasDrunk && !isDrinking)
 
             {
-                Debug.Log("Starting drinking process");
+                
                 StartCoroutine(HandleDrinking());
 
                 return;
             }
 
             // Handle the item opening action
-            if (itemScript.itemIsInHand == true && itemScript.itemIsOpened == false)
+            if (itemInHandScript.itemIsInHand == true && itemInHandScript.itemIsOpened == false)
             {
-                Debug.Log("Opening item");
-                itemScript.Open();
+                
+                itemInHandScript.Open();
                 interfaceScript.DisplayDrinkText();
-                itemScript.itemIsOpened = true;
+                itemInHandScript.itemIsOpened = true;
                 return;
             }
         }
@@ -140,11 +149,14 @@ public class HandScript : MonoBehaviour
     private IEnumerator SpawnInHand()
     {
         yield return new WaitForSeconds(0.5f);
-        collectingTrayScript.itemFalled.transform.SetParent(transform);
-        collectingTrayScript.itemFalled.transform.localPosition = Vector3.zero;
-        collectingTrayScript.itemFalled.transform.localRotation = Quaternion.identity;
-        collectingTrayScript.itemFalled.transform.localScale = Vector3.one;
-        Debug.Log("Ca spawn dans ma main");
+
+        itemToSpawnInHand = collectingTrayScript.itemFalled;
+
+        itemToSpawnInHand.transform.SetParent(transform);
+        itemToSpawnInHand.transform.localPosition = Vector3.zero;
+        itemToSpawnInHand.transform.localRotation = Quaternion.identity;
+        itemToSpawnInHand.transform.localScale = Vector3.one;
+        
     }
 
 
@@ -153,16 +165,14 @@ public class HandScript : MonoBehaviour
         
         isDrinking = true;
         interfaceScript.ClearText();
-        Debug.Log("Playing drinking sound and animation");
+        
         m_Animator.SetTrigger("Drinking");
         yield return StartCoroutine(playerScript.PlayDrinkingSound()); // Wait for the drinking sound to finish
         hasDrunk = true;
-        Debug.Log("hasDrunk set to true");
+        
         isDrinking = false;
         interfaceScript.DisplayBurpText();
     }
 
-    //Debug.Log("Drinking audio finished");
-      //  interfaceScript.DisplayBurpText();
 
 }
