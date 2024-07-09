@@ -1,7 +1,17 @@
 /* 
  
+COmprendre pk c'est l'autre canette qui s'ouvre et c'est tjrs la même.  
+Comprendre les breakpoints pour savoir comment le code se déroule et du coup verifier les variables.
+Approfondir le syst_me de nommage 
+Et forcer que ce soit l'opercule qui est enfant de la canette qui s'anime.
 
 Priorité : 
+
+- la mauvaise canette s'ouvre. 
+- vérifier qu'elle canette est dans la main. Ca c'est Ok.
+- quelle est la canette qui est instancié dans la main quand je clique sur le collecteur. Il faudrait que ce soit la canette qui est tombé. Ca c'est Ok
+- Dans le code dire que c'est la canette qui est dans la main. qui s'ouvre. 
+- COmplétez le code de Pierre pour renommer les canettes.
 
 _ Comprendre les listes pour les boissons et gérer les différents montants
 _ Comprendre comment on recommence une fois bu
