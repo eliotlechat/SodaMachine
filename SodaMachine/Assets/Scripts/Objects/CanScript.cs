@@ -10,12 +10,14 @@ public class CanScript : ItemScript
 
     [SerializeField] 
     Animator tabAnimator;
+    new ParticleSystem particleSystem;
 
 
     protected override void Start() // Va écraser la méthode du parent
     {
         // Initialise le parent (l'item, donc audiosource et l'audioClip) et bease correspond au parent donc Item
         base.Start();
+        particleSystem = GetComponentInChildren<ParticleSystem>();
     }
 
     public override void Open()
@@ -25,7 +27,10 @@ public class CanScript : ItemScript
         {
             itemAudioSource.PlayOneShot(openTabSound);
 
+
             tabAnimator.SetTrigger("OpenTab");
+
+            particleSystem.Play();
 
             itemIsOpened = true;
         }
