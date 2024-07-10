@@ -17,10 +17,13 @@ public class CollectingTrayScript : MonoBehaviour
 
     Interface interfaceScript;
 
+    MachineScript machineScript;
+
     private void Start()
     {
         collectingTrayAudioSource = GetComponent<AudioSource>();
         interfaceScript = FindObjectOfType<Interface>();
+        machineScript = FindObjectOfType<MachineScript>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -29,6 +32,8 @@ public class CollectingTrayScript : MonoBehaviour
         OutlinerOn();
         itemInCollectingTray = true;
         interfaceScript.ClearText();
+
+        machineScript.cardReader.paymentCardDetected = false;
 
     }
 

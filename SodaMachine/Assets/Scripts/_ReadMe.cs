@@ -1,39 +1,32 @@
 /* 
  
-COmprendre pk c'est l'autre canette qui s'ouvre et c'est tjrs la même.  
-Comprendre les breakpoints pour savoir comment le code se déroule et du coup verifier les variables.
-Approfondir le syst_me de nommage 
-Et forcer que ce soit l'opercule qui est enfant de la canette qui s'anime.
-
 Priorité : 
 
-- la mauvaise canette s'ouvre. 
-- vérifier qu'elle canette est dans la main. Ca c'est Ok.
-- quelle est la canette qui est instancié dans la main quand je clique sur le collecteur. Il faudrait que ce soit la canette qui est tombé. Ca c'est Ok
-- Dans le code dire que c'est la canette qui est dans la main. qui s'ouvre. 
-- COmplétez le code de Pierre pour renommer les canettes.
+Corriger les BUGS
+J'ai des bugs quand je recommence
+Particule ouverture de la canette
+Approfondir le système de nommage de Pierre
 
 _ Comprendre les listes pour les boissons et gérer les différents montants
-_ Comprendre comment on recommence une fois bu
-_ bouteilles d'eau, paquet de chips,
-_ Faire apparaitre une animation d'ouverture de canette et particule ? 
+_ bouteilles d'eau, paquet de chips, 
+_ Le violet sera le plus cher
+
  
 
 
-BUGS :
+
 
 - corriger le bug de la ArgumentNulleException 1 fois sur 2 ligne 131
-- Une fois que j'ai burp, je n'arrive pas à reutiliser la machine
+
 - Je n'arrive pas 1 fois sur 2 à utiliser le pavé numérique
 
 
  * 
 
- * 
- * Le violet sera le plus cher
+ * Quand je recommence, j'ai du mal à interagir sur le numpad ( j'ai remarqué quand je suis pas assez proche)
+ * Quand je recommence et que je tape le numéro, la canette tombe avant meme que j'ai a payé
+ * et du coup ensuite je clique E pour ouvrir la canette mais c'est l'interraction Payer avec la carte qui joue;
  *  
- * est ce que je fais un UML 
- * Comment on peut améliorer l'organisation.
  * 
  *   
  * 
@@ -41,8 +34,7 @@ BUGS :
  * 
  */
 
-/* Repenser le distributeur, il y a un problème déjà je pense qu'il faut agrandir l'espacement
- * et mettre des colliders sur les côtés. DIMINUER LES TABLETTES SURTOUT
+/* 
  *
  * 
  * 
@@ -58,7 +50,8 @@ BUGS :
 /* DESIGN 
  * Réduire les plateaux pour plus d'espaces
 * Agrandir la hauteur des étagères 
-
+ * Repenser le distributeur, il y a un problème déjà je pense qu'il faut agrandir l'espacement
+ * et mettre des colliders sur les côtés. DIMINUER LES TABLETTES SURTOUT
 * Créer des bouteilles d'eau
 * 
 * 

@@ -17,7 +17,7 @@ public class MachineScript : MonoBehaviour
     private GameObject stock;
 
     private NumpadScript numpadScript;
-    private CardReader cardReader;
+    public CardReader cardReader;
 
     private List<GameObject> items = new List<GameObject>();
 
@@ -58,7 +58,11 @@ public class MachineScript : MonoBehaviour
             {
                 child.transform.Translate(Vector3.forward * canMovementDistance);
             }
+
+            
         }
+
+        
     }
 
     

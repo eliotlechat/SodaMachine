@@ -121,11 +121,15 @@ public class HandScript : MonoBehaviour
        
                 playerScript.PlayBurpSound();
                 interfaceScript.ClearText();
+                // détruire la canette dans ma main.
+                StartCoroutine(DestroyAfterDelay(1.0f,itemToSpawnInHand));
+                
                 return; // Exit to prevent further actions when hasDrunk is true
             }
 
             // Handle the drinking action
             if (itemInHandScript.itemIsInHand && itemInHandScript.itemIsOpened && !hasDrunk && !isDrinking)
+                // j'ai une null référence
 
             {
                 
@@ -150,7 +154,7 @@ public class HandScript : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
 
-        itemToSpawnInHand = collectingTrayScript.itemFalled;
+        itemToSpawnInHand = collectingTrayScript.itemFalled; // là j'ai une nullReference
 
         itemToSpawnInHand.transform.SetParent(transform);
         itemToSpawnInHand.transform.localPosition = Vector3.zero;
@@ -174,5 +178,10 @@ public class HandScript : MonoBehaviour
         interfaceScript.DisplayBurpText();
     }
 
+    private IEnumerator DestroyAfterDelay(float delay, GameObject item)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(item);
+    }
 
 }
