@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerFPS : MonoBehaviour
+public class FPS_Controller: MonoBehaviour
 {
     //Camera
     public Camera playerCamera;

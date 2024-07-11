@@ -1,13 +1,13 @@
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using System.Collections;
 
 public class NumpadScript : MonoBehaviour
 {
-    MachineScript machineScript;
+    private MachineScript machineScript;
 
-    private HandScript handScript;
+    private Raycast raycast;
     public TMP_Text numpadScreen;
 
     [HideInInspector]
@@ -15,7 +15,7 @@ public class NumpadScript : MonoBehaviour
 
     public bool isPriceDisplayed = false;
 
-    const float itemPrice = 2.30f;
+    private const float itemPrice = 2.30f;
 
     private int buttonVal;
 
@@ -23,21 +23,18 @@ public class NumpadScript : MonoBehaviour
 
     public bool isCombinationFormed = false;
 
-    Interface interfaceScript; 
-
-
-
+    private Interface interfaceScript;
 
     private void Start()
     {
-        handScript = FindObjectOfType<HandScript>();
+        raycast = FindObjectOfType<Raycast>();
         machineScript = FindObjectOfType<MachineScript>();
         interfaceScript = FindObjectOfType<Interface>();
     }
 
     public void DisplayButtonValue()
     {
-        GameObject buttonHit = handScript.Button;
+        GameObject buttonHit = raycast.button;
         string buttonName = buttonHit.name.ToString();
         numpadScreen.text = buttonName;
         buttonVal = int.Parse(buttonName);
@@ -59,28 +56,23 @@ public class NumpadScript : MonoBehaviour
 
             Debug.Log("The object has been selected");
             StartCoroutine(DisplayItemPriceWithDelay());
-
         }
     }
 
     private IEnumerator DisplayItemPriceWithDelay()
     {
-
         yield return new WaitForSeconds(0.5f);
         numpadScreen.text = itemPrice.ToString();
         isPriceDisplayed = true;
         interfaceScript.DisplayPaymentText();
-
     }
 
     public void ResetScreen()
     {
         numpadScreen.text = "";
-        isPriceDisplayed= false;
+        isPriceDisplayed = false;
         buttonsValList.Clear();
         combination = 0;
         isCombinationFormed = false;
     }
-
-    
 }

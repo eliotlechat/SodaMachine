@@ -4,7 +4,7 @@ Priorité :
 
 Corriger les BUGS
 J'ai des bugs quand je recommence
-Particule ouverture de la canette
+
 Approfondir le système de nommage de Pierre
 
 _ Comprendre les listes pour les boissons et gérer les différents montants
