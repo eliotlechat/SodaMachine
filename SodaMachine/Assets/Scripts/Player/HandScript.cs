@@ -9,7 +9,6 @@ public class HandScript : MonoBehaviour
     private Interface interfaceScript;
     private PlayerScript playerScript;
 
-    private GameObject itemToSpawnInHand;
     private ItemScript itemInHandScript;
 
     private bool hasDrunk = false;
@@ -33,25 +32,22 @@ public class HandScript : MonoBehaviour
         }
     }
 
-    public IEnumerator SpawnInHand(GameObject item)
+    public IEnumerator SpawnInHand(GameObject itemToSpawn) //itemToSpawn = CollectingTrayScript.itemFalled
     {
         yield return new WaitForSeconds(0.5f);
 
-        itemToSpawnInHand = item;
-        AttachItemToHand(itemToSpawnInHand);
-
-        itemInHandScript = itemToSpawnInHand.GetComponent<ItemScript>();
-        itemInHandScript.itemIsInHand = true;
-    }
-
-    private void AttachItemToHand(GameObject item)
-    {
-        Rigidbody rb = item.GetComponent<Rigidbody>();
+        
+        
+        Rigidbody rb = itemToSpawn.GetComponent<Rigidbody>();
         rb.isKinematic = true;
-        item.transform.SetParent(transform);
-        item.transform.localPosition = Vector3.zero;
-        item.transform.localRotation = Quaternion.identity;
-        item.transform.localScale = Vector3.one;
+
+        itemToSpawn.transform.SetParent(transform);
+        itemToSpawn.transform.localPosition = Vector3.zero;
+        itemToSpawn.transform.localRotation = Quaternion.identity;
+        itemToSpawn.transform.localScale = Vector3.one;
+
+        itemInHandScript = itemToSpawn.GetComponent<ItemScript>();
+        itemInHandScript.itemIsInHand = true;
     }
 
     public void HandleActions()
@@ -85,7 +81,7 @@ public class HandScript : MonoBehaviour
     {
         playerScript.PlayBurpSound();
         interfaceScript.ClearText();
-        StartCoroutine(DestroyAfterDelay(1.0f, itemToSpawnInHand));
+        StartCoroutine(DestroyAfterDelay(1.0f, itemInHandScript.gameObject));
     }
 
     private void OpenItemInHand()

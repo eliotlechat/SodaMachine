@@ -15,7 +15,7 @@ public class StackScript : MonoBehaviour
 
     void InstantiateCansStack()
     {
-        int i = 0;
+        int i = 1;
         foreach (Transform child in transform)
         {
 
@@ -23,11 +23,17 @@ public class StackScript : MonoBehaviour
 
             GameObject instance = Instantiate(stackItem, child.position, newRotation);
 
-            instance.name += "_" + i;
+            var parentName = transform.name;
+
+            string newName = parentName + "_" + stackItem.name.Replace("(Clone)", "") + "_" + i;
+
+            instance.name = newName;
 
             i++;
 
             instance.transform.parent = child;
+
+            
         }
     }
 

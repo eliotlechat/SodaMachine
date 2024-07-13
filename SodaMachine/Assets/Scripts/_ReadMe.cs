@@ -2,61 +2,53 @@
  
 Priorité : 
 
-Corriger les BUGS
-
-cômprendre les fonctions avec paramètres
-rendre plus clair la fonction SpawnInHand(GameObject item)
-J'ai des bugs quand je recommence
-
-Approfondir le système de nommage de Pierre
-
-_ Comprendre les listes pour les boissons et gérer les différents montants
-_ bouteilles d'eau, paquet de chips, 
-_ Le violet sera le plus cher
-
+_ Exercice : Réunir HandScript dans PlayerScript 1s
+- Corriger les bugs quand on recommence 1s
+* Corriger les BUGS
  
 
 
 
 
 
+UPDATES :
 
-- Je n'arrive pas à utiliser le pavé numérique quand je recommence.
+_ Comprendre les listes pour les boissons et gérer les différents montants . Le violet sera le plus cher
+_ bouteilles d'eau, paquet de chips, 
 
 
- * 
+BUGS : 
+* J'ai des bugs quand je recommence
+* Quand j'ai un objet à la main, je peux interagir avec la Machine.
 
- * Quand je recommence, j'ai du mal à interagir sur le numpad ( j'ai remarqué quand je suis pas assez proche)
- * Quand je recommence et que je tape le numéro, la canette tombe avant meme que j'ai a payé
- * et du coup ensuite je clique E pour ouvrir la canette mais c'est l'interraction Payer avec la carte qui joue;
- *  
- * 
- *   
- * 
- * 
- * 
- */
+ 
+Animer l'opercule inferieur 
 
-/* 
- *
- * 
- * 
- */
+Dans le script 
 
-/* 
- * 
- * 
- * Je pense qu'avant je dois comprendre les unity events et les accesseurs. les design patterns ("singletons")
- * 
- */
+*/
 
-/* DESIGN 
- * Réduire les plateaux pour plus d'espaces
+/* DESIGN :
+
+* Réduire les plateaux pour plus d'espaces
 * Agrandir la hauteur des étagères 
- * Repenser le distributeur, il y a un problème déjà je pense qu'il faut agrandir l'espacement
- * et mettre des colliders sur les côtés. DIMINUER LES TABLETTES SURTOUT
+* Repenser le distributeur, il y a un problème déjà je pense qu'il faut agrandir l'espacement
+* et mettre des colliders sur les côtés. DIMINUER LES TABLETTES SURTOUT
 * Créer des bouteilles d'eau
+* La canette n'a pas de hole
+* Les canettes ont tous la meme textures.
+* La carte n'a pas de textures
+* il n'y a pas d'étiquettes de numéro , TMP
+*/
+
+// Je pense qu'avant je dois comprendre les unity events et les accesseurs. les design patterns ("singletons").
+/*
+ NOTIONS APPRISES : 
+* Les méthodes et paramètres
+ * La différence entre paramètre et arguments. 
+* référencer un objet 
+* Instancier un objet. 
+* Les TMP
 * 
-* 
-* 
+
 */
