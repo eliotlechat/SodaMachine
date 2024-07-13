@@ -936,7 +936,7 @@ PrefabInstance:
       objectReference: {fileID: 1040379144}
     - target: {fileID: 5063502816263307243, guid: 61459a582db091e49a6b4e1b36e8fcf3, type: 3}
       propertyPath: m_Name
-      value: Hand_R
+      value: Hand
       objectReference: {fileID: 0}
     - target: {fileID: 7509657487368076421, guid: 61459a582db091e49a6b4e1b36e8fcf3, type: 3}
       propertyPath: m_LocalPosition.x

@@ -3,6 +3,9 @@
 Priorité : 
 
 Corriger les BUGS
+
+cômprendre les fonctions avec paramètres
+rendre plus clair la fonction SpawnInHand(GameObject item)
 J'ai des bugs quand je recommence
 
 Approfondir le système de nommage de Pierre
@@ -16,9 +19,9 @@ _ Le violet sera le plus cher
 
 
 
-- corriger le bug de la ArgumentNulleException 1 fois sur 2 ligne 131
 
-- Je n'arrive pas 1 fois sur 2 à utiliser le pavé numérique
+
+- Je n'arrive pas à utiliser le pavé numérique quand je recommence.
 
 
  * 

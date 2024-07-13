@@ -19,18 +19,19 @@ public class Raycast : MonoBehaviour
         numpadScript = FindObjectOfType<NumpadScript>();
         interfaceScript = FindObjectOfType<Interface>();
         collectingTrayScript = FindObjectOfType<CollectingTrayScript>();
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
-    // Code pour le rayon au cente
+    
     public void ShootRayFromScreenCenter()
     {
         Vector2 screenCenterPoint = new Vector2(Screen.width / 2, Screen.height / 2);
         ray = Camera.main.ScreenPointToRay(screenCenterPoint);
 
-        // si il touche un objet 
+        
         if (Physics.Raycast(ray, out hit, Camera.main.farClipPlane))
         {
-            // Gestion du Hit du raycast
+            
             HandleRaycastHit();
         }
     }

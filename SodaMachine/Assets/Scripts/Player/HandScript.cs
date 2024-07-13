@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class HandScript : MonoBehaviour
 {
-    [SerializeField]
+    
     private Animator m_Animator;
 
     private Interface interfaceScript;
@@ -17,9 +17,10 @@ public class HandScript : MonoBehaviour
 
     private void Start()
     {
+        m_Animator = GetComponent<Animator>();
         playerScript = FindObjectOfType<PlayerScript>();
         interfaceScript = FindObjectOfType<Interface>();
-        Cursor.lockState = CursorLockMode.Confined;//Est-ce au bon endroit ???????
+        
     }
 
     private void Update()
@@ -46,8 +47,7 @@ public class HandScript : MonoBehaviour
     private void AttachItemToHand(GameObject item)
     {
         Rigidbody rb = item.GetComponent<Rigidbody>();
-        rb.isKinematic = true
-            ;
+        rb.isKinematic = true;
         item.transform.SetParent(transform);
         item.transform.localPosition = Vector3.zero;
         item.transform.localRotation = Quaternion.identity;
