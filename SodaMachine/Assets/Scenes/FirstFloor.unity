@@ -2420,7 +2420,6 @@ GameObject:
   m_Component:
   - component: {fileID: 504169897}
   - component: {fileID: 504169900}
-  - component: {fileID: 504169899}
   m_Layer: 3
   m_Name: Post-process Volume
   m_TagString: Untagged
@@ -2443,18 +2442,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &504169899
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 504169896}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &504169900
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8964,7 +8951,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8734725580341463646}
   - component: {fileID: 3685956888787150651}
-  - component: {fileID: 2393918296675711009}
   m_Layer: 0
   m_Name: Collider (8)
   m_TagString: Untagged
@@ -9274,7 +9260,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4044912724237838713}
   - component: {fileID: 1245664976079563035}
-  - component: {fileID: 1360561958891437627}
   m_Layer: 0
   m_Name: Collider (9)
   m_TagString: Untagged
@@ -9282,18 +9267,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &964442323278883488
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3363797163109338134}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8483b16727583d1449ef2e5adb175dc7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1031119927165362546
 GameObject:
   m_ObjectHideFlags: 0
@@ -9304,8 +9277,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4070775263864331712}
   - component: {fileID: 140061266401143631}
-  - component: {fileID: 3071283410991553595}
-  - component: {fileID: 1332233150200054290}
   m_Layer: 0
   m_Name: Collider (7)
   m_TagString: Untagged
@@ -9313,18 +9284,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1035212327959949279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6756968636938209637}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d83dd8fb7bdaf5488fd1cbd9f7c94f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1136180563515958966
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9495,42 +9454,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.4721127, y: 7.173483, z: 0.89517784}
   m_Center: {x: 6.8299294, y: 2.3010254, z: -3.0519953}
---- !u!114 &1330280090773875485
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7690049908767325169}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6757b231cedd544c583ef8aeaf773b2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1332233150200054290
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1031119927165362546}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6757b231cedd544c583ef8aeaf773b2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1360561958891437627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 956236643152661933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6757b231cedd544c583ef8aeaf773b2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1368378825532907145
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9855,18 +9778,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.1750503, y: 7.173483, z: 1.8194761}
   m_Center: {x: 1.3557179, y: 2.3010254, z: 5.914681}
---- !u!114 &2393918296675711009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 383729689124781153}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6757b231cedd544c583ef8aeaf773b2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2528952215404339459
 GameObject:
   m_ObjectHideFlags: 0
@@ -9884,18 +9795,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2705600342815877111
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6756968636938209637}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6757b231cedd544c583ef8aeaf773b2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &2741933214864650699
 Transform:
   m_ObjectHideFlags: 0
@@ -10003,7 +9902,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2130875841076674077}
   - component: {fileID: 1588031783480908143}
-  - component: {fileID: 5759457919415911838}
   m_Layer: 0
   m_Name: Collider (4)
   m_TagString: Untagged
@@ -10011,18 +9909,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &3008591883742570823
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8023501532593216468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6757b231cedd544c583ef8aeaf773b2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &3020461036798498992
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10080,18 +9966,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d59ccd7c244de9641947e9b320d0444f, type: 3}
---- !u!114 &3071283410991553595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1031119927165362546}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d83dd8fb7bdaf5488fd1cbd9f7c94f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3077649720208090719
 GameObject:
   m_ObjectHideFlags: 0
@@ -10109,30 +9983,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &3178760241417005645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6732592915342893105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d83dd8fb7bdaf5488fd1cbd9f7c94f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3179911097021343528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6013002757781816569}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6757b231cedd544c583ef8aeaf773b2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &3306312181199107115
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10164,7 +10014,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4654790312911130897}
   - component: {fileID: 4667678901488017964}
-  - component: {fileID: 6256189194578853167}
   m_Layer: 0
   m_Name: Collider (3)
   m_TagString: Untagged
@@ -10181,7 +10030,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7027658313334903633}
-  - component: {fileID: 964442323278883488}
   m_Layer: 6
   m_Name: Teleport - TeleportationArea
   m_TagString: Untagged
@@ -10189,18 +10037,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &3456978622015050122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7741577347407874153}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6757b231cedd544c583ef8aeaf773b2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &3484112664461891195
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10253,8 +10089,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2256494372933973111}
   - component: {fileID: 1647874061767688118}
-  - component: {fileID: 4789313202455658758}
-  - component: {fileID: 5301599611328280696}
   m_Layer: 0
   m_Name: Collider
   m_TagString: Untagged
@@ -10262,30 +10096,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &3760085207645366687
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4845494199605033865}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6757b231cedd544c583ef8aeaf773b2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3899524616788563569
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6732592915342893105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6757b231cedd544c583ef8aeaf773b2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &3923541076561792605
 Transform:
   m_ObjectHideFlags: 0
@@ -10394,7 +10204,6 @@ GameObject:
   m_Component:
   - component: {fileID: 510938132854381574}
   - component: {fileID: 243887543998893347}
-  - component: {fileID: 5394043819135810366}
   m_Layer: 0
   m_Name: Collider (6)
   m_TagString: Untagged
@@ -10548,30 +10357,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2748379049117541560}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4761646418399417252
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5316848346651826493}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6757b231cedd544c583ef8aeaf773b2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4789313202455658758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3691107372391126099}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d83dd8fb7bdaf5488fd1cbd9f7c94f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4845494199605033865
 GameObject:
   m_ObjectHideFlags: 0
@@ -10582,7 +10367,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6670576902090397538}
   - component: {fileID: 3484112664461891195}
-  - component: {fileID: 3760085207645366687}
   m_Layer: 0
   m_Name: Collider (12)
   m_TagString: Untagged
@@ -10754,18 +10538,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7027658313334903633}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5301599611328280696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3691107372391126099}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6757b231cedd544c583ef8aeaf773b2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5316848346651826493
 GameObject:
   m_ObjectHideFlags: 0
@@ -10776,7 +10548,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8962455681564710343}
   - component: {fileID: 2347638285889176451}
-  - component: {fileID: 4761646418399417252}
   m_Layer: 0
   m_Name: Collider (7)
   m_TagString: Untagged
@@ -10828,18 +10599,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &5394043819135810366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4389035438383828054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6757b231cedd544c583ef8aeaf773b2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &5563510797359787796
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10876,18 +10635,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7027658313334903633}
   m_LocalEulerAnglesHint: {x: -28.144, y: 0, z: 0}
---- !u!114 &5612607841824084121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8261735779113144238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6757b231cedd544c583ef8aeaf773b2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &5659687145878480682
 Transform:
   m_ObjectHideFlags: 0
@@ -10919,18 +10666,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &5759457919415911838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2855289676793917729}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6757b231cedd544c583ef8aeaf773b2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5934561068504992754
 GameObject:
   m_ObjectHideFlags: 0
@@ -10958,7 +10693,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4997379451949524116}
   - component: {fileID: 1136180563515958966}
-  - component: {fileID: 3179911097021343528}
   m_Layer: 0
   m_Name: Collider
   m_TagString: Untagged
@@ -11048,18 +10782,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 581e4947bd1ae364ea55bf0fb68283a2, type: 3}
---- !u!114 &6256189194578853167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3309159057046743820}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6757b231cedd544c583ef8aeaf773b2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6295251038770839750
 GameObject:
   m_ObjectHideFlags: 0
@@ -11318,8 +11040,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4468121863500775017}
   - component: {fileID: 7203655680281738626}
-  - component: {fileID: 3178760241417005645}
-  - component: {fileID: 3899524616788563569}
   m_Layer: 0
   m_Name: Collider (6)
   m_TagString: Untagged
@@ -11337,8 +11057,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3980131827390403479}
   - component: {fileID: 7896989312086720398}
-  - component: {fileID: 1035212327959949279}
-  - component: {fileID: 2705600342815877111}
   m_Layer: 0
   m_Name: Collider (5)
   m_TagString: Untagged
@@ -11690,7 +11408,6 @@ GameObject:
   m_Component:
   - component: {fileID: 843751944168342940}
   - component: {fileID: 4473908066228354086}
-  - component: {fileID: 1330280090773875485}
   m_Layer: 0
   m_Name: Collider (5)
   m_TagString: Untagged
@@ -11708,7 +11425,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2101759597831833661}
   - component: {fileID: 4702488575814691768}
-  - component: {fileID: 3456978622015050122}
   m_Layer: 0
   m_Name: Collider (2)
   m_TagString: Untagged
@@ -11896,7 +11612,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1745828223760257187}
   - component: {fileID: 334615222588106678}
-  - component: {fileID: 3008591883742570823}
   m_Layer: 0
   m_Name: Collider (11)
   m_TagString: Untagged
@@ -11914,7 +11629,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4896653405834689832}
   - component: {fileID: 6510993064924907872}
-  - component: {fileID: 5612607841824084121}
   m_Layer: 0
   m_Name: Collider (10)
   m_TagString: Untagged
