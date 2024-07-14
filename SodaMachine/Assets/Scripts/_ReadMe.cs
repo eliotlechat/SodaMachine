@@ -2,9 +2,10 @@
  
 Priorité : 
 
-_ Exercice : Réunir HandScript dans PlayerScript 1s
+
 - Corriger les bugs quand on recommence 1s
 * Corriger les BUGS
+
  
 
 
@@ -15,9 +16,10 @@ UPDATES :
 
 _ Comprendre les listes pour les boissons et gérer les différents montants . Le violet sera le plus cher
 _ bouteilles d'eau, paquet de chips, 
-
+_ Commenter au départ
 
 BUGS : 
+
 * J'ai des bugs quand je recommence
 * Quand j'ai un objet à la main, je peux interagir avec la Machine.
 

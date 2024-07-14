@@ -468,23 +468,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5380668703829684072, guid: 280d234e1cbacf745a5bf9eb84cb7c4d, type: 3}
   m_PrefabInstance: {fileID: 193257204}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &220746499 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5063502816263307243, guid: 61459a582db091e49a6b4e1b36e8fcf3, type: 3}
-  m_PrefabInstance: {fileID: 539873867}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &220746508
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 220746499}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47ab4a31302219d4186ee6094d1c64f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &225837066
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1695,7 +1678,7 @@ PrefabInstance:
       objectReference: {fileID: 1040379144}
     - target: {fileID: 5063502816263307243, guid: 61459a582db091e49a6b4e1b36e8fcf3, type: 3}
       propertyPath: m_Name
-      value: Hand
+      value: Hand_R
       objectReference: {fileID: 0}
     - target: {fileID: 7509657487368076421, guid: 61459a582db091e49a6b4e1b36e8fcf3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1774,6 +1757,7 @@ PrefabInstance:
       value: 225.356
       objectReference: {fileID: 0}
     m_RemovedComponents:
+    - {fileID: 0}
     - {fileID: 4277538020460174840, guid: 61459a582db091e49a6b4e1b36e8fcf3, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -1793,9 +1777,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7008007001706941983, guid: 61459a582db091e49a6b4e1b36e8fcf3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1040379147}
-    - targetCorrespondingSourceObject: {fileID: 5063502816263307243, guid: 61459a582db091e49a6b4e1b36e8fcf3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 220746508}
   m_SourcePrefab: {fileID: 100100000, guid: 61459a582db091e49a6b4e1b36e8fcf3, type: 3}
 --- !u!224 &539873868 stripped
 RectTransform:

@@ -3,19 +3,25 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
-    private Interface interfaceScript;
+    /*
+     * This script manages the interactions of the player with items
+     * It handles picking up, drinking, and destroying of item
+     * Additionally, it manages audio feedback for actions such as drinking and burping
+     */
 
+    // References to necessary scripts and components
+    private Interface interfaceScript;
     private Animator handAnimator;
     private ItemScript itemInHandScript;
-
     private AudioSource playerAudioSource;
 
+    // Clips audio
     [SerializeField]
     private AudioClip drinkingSound;
-
     [SerializeField]
     private AudioClip burpSound;
 
+    // Player status
     private bool hasDrunk = false;
     private bool isDrinking = false;
     private bool hasBurped = false;
@@ -36,43 +42,11 @@ public class PlayerScript : MonoBehaviour
         {
             var raycast = FindObjectOfType<Raycast>();
             raycast.ShootRayFromScreenCenter();
-            HandleActions();
+            ProcessItemInteraction();
         }
     }
 
-    public IEnumerator SpawnInHand(GameObject itemToSpawn) //itemToSpawn = CollectingTrayScript.itemFalled
-    {
-        yield return new WaitForSeconds(0.5f);
-
-        // Find object named Camera
-        Transform cameraTransform = transform.Find("Camera");
-        if (cameraTransform == null)
-        {
-            Debug.LogError("Camera not found as a child of " + gameObject.name);
-            yield break;
-        }
-
-        // Trouver l'objet Hand_R sous Camera
-        Transform handTransform = cameraTransform.Find("Hand_R");
-        if (handTransform == null)
-        {
-            Debug.LogError("Hand_R not found as a child of Camera");
-            yield break;
-        }
-
-        Rigidbody rb = itemToSpawn.GetComponent<Rigidbody>();
-        rb.isKinematic = true;
-
-        itemToSpawn.transform.SetParent(handTransform);
-        itemToSpawn.transform.localPosition = Vector3.zero;
-        itemToSpawn.transform.localRotation = Quaternion.identity;
-        itemToSpawn.transform.localScale = Vector3.one;
-
-        itemInHandScript = itemToSpawn.GetComponent<ItemScript>();
-        itemInHandScript.itemIsInHand = true;
-    }
-
-    public void HandleActions()
+    public void ProcessItemInteraction()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -93,7 +67,7 @@ public class PlayerScript : MonoBehaviour
 
                 if (itemInHandScript.itemIsInHand && !itemInHandScript.itemIsOpened)
                 {
-                    OpenItemInHand();
+                    OpenItem();
                 }
             }
         }
@@ -101,12 +75,27 @@ public class PlayerScript : MonoBehaviour
 
     private void HandleBurping()
     {
-        PlayBurpSound();
+        if (!hasBurped)
+        {
+            hasBurped = true;
+
+            GetComponent<AudioSource>().PlayOneShot(burpSound);
+        }
+        else
+        {
+            Debug.Log("Burp sound has already been played");
+        }
+
         interfaceScript.ClearText();
-        StartCoroutine(DestroyAfterDelay(1.0f, itemInHandScript.gameObject));
+
+        if (itemInHandScript !=null)
+        {
+            StartCoroutine(DestroyAfterDelay(1.0f, itemInHandScript.gameObject));
+        }
+        
     }
 
-    private void OpenItemInHand()
+    private void OpenItem()
     {
         itemInHandScript.Open();
         interfaceScript.DisplayDrinkText();
@@ -120,17 +109,36 @@ public class PlayerScript : MonoBehaviour
 
         var m_Animator = GetComponent<Animator>();
         handAnimator.SetTrigger("Drinking");
-        yield return StartCoroutine(PlayDrinkingSound()); // Wait for the drinking sound to finish
+        yield return StartCoroutine(PlayDrinkingSound()); 
 
         hasDrunk = true;
         isDrinking = false;
         interfaceScript.DisplayBurpText();
     }
 
-    private IEnumerator DestroyAfterDelay(float delay, GameObject item)
+    public IEnumerator SpawnInHand(GameObject itemToSpawn) //itemToSpawn = CollectingTrayScript.itemFalled
     {
-        yield return new WaitForSeconds(delay);
-        Destroy(item);
+        yield return new WaitForSeconds(0.5f);
+
+        // Find Child Hand_R
+        Transform handTransform = transform.Find("Camera/Hand_R");
+
+        if (handTransform == null)
+        {
+            Debug.LogError("Hand_R not found as a child of Camera");
+            yield break;
+        }
+
+        Rigidbody rb = itemToSpawn.GetComponent<Rigidbody>();
+        rb.isKinematic = true;
+
+        itemToSpawn.transform.SetParent(handTransform);
+        itemToSpawn.transform.localPosition = Vector3.zero;
+        itemToSpawn.transform.localRotation = Quaternion.identity;
+        itemToSpawn.transform.localScale = Vector3.one;
+
+        itemInHandScript = itemToSpawn.GetComponent<ItemScript>();
+        itemInHandScript.itemIsInHand = true;
     }
 
     public IEnumerator PlayDrinkingSound()
@@ -143,18 +151,12 @@ public class PlayerScript : MonoBehaviour
         Debug.Log("Drinking sound finished");
     }
 
-    public void PlayBurpSound()
+    private IEnumerator DestroyAfterDelay(float delay, GameObject item)
     {
-        if (!hasBurped)
-        {
-            hasBurped = true;
-            Debug.Log("PlayBurpSound called");
-
-            GetComponent<AudioSource>().PlayOneShot(burpSound);
-        }
-        else
-        {
-            Debug.Log("Burp sound has already been played");
-        }
+        yield return new WaitForSeconds(delay);
+        Destroy(item);
+        itemInHandScript = null; // Update reference after destruction
     }
+
+
 }
