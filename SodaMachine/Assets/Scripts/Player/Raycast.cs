@@ -73,8 +73,8 @@ public class Raycast : MonoBehaviour
         {
             Debug.Log("l'item qui va popper dans ma main est : " + collectingTrayScript.itemFalled.name);
 
-            var handScript = FindObjectOfType<HandScript>();
-            handScript.StartCoroutine(handScript.SpawnInHand(collectingTrayScript.itemFalled));
+            var playerScript = FindObjectOfType<PlayerScript>();
+            playerScript.StartCoroutine(playerScript.SpawnInHand(collectingTrayScript.itemFalled));
 
             collectingTrayScript.PlayCollectingTrayDoorSound();
             collectingTrayScript.itemInCollectingTray = false;
