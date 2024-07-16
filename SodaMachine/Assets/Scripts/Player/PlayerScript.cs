@@ -87,6 +87,9 @@ public class PlayerScript : MonoBehaviour
         }
 
         interfaceScript.ClearText();
+        hasDrunk = false;
+        isDrinking = false;
+        hasBurped = false;
 
         if (itemInHandScript !=null)
         {
@@ -156,6 +159,7 @@ public class PlayerScript : MonoBehaviour
         yield return new WaitForSeconds(delay);
         Destroy(item);
         itemInHandScript = null; // Update reference after destruction
+       
     }
 
 

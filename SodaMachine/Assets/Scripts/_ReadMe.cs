@@ -3,7 +3,7 @@
 Priorité : 
 
 
-- Corriger les bugs quand on recommence 1s
+
 * Corriger les BUGS
 
  
@@ -20,9 +20,9 @@ _ Commenter au départ
 
 BUGS : 
 
-* J'ai des bugs quand je recommence
-* Quand j'ai un objet à la main, je peux interagir avec la Machine.
 
+* Quand j'ai un objet à la main, je peux interagir avec la Machine.
+* Bug lorsqu'on selectionne une boisson +66
  
 Animer l'opercule inferieur 
 
@@ -40,7 +40,7 @@ Dans le script
 * La canette n'a pas de hole
 * Les canettes ont tous la meme textures.
 * La carte n'a pas de textures
-* il n'y a pas d'étiquettes de numéro , TMP
+* il n'y a pas d'étiquettes de numéro sur clavier
 */
 
 // Je pense qu'avant je dois comprendre les unity events et les accesseurs. les design patterns ("singletons").
