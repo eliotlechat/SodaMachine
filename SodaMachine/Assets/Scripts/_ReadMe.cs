@@ -5,6 +5,8 @@ Priorité :
 
 
 * Corriger les BUGS
+* Je peux tjrs interagir avec les boutons alors que j'ai un objet à la main. Est ce 
+que c'est pas une erreur de renommer itemInHanScript. j'ai l'impressiosn que ca fait brouillon
 
  
 

@@ -42,8 +42,9 @@ public class MachineScript : MonoBehaviour
             if (item.name == input.ToString())
             {
                 foundItem = item;
-                Debug.Log("Objet trouvé: " + item.name);
+
             }
+
         }
     }
 
