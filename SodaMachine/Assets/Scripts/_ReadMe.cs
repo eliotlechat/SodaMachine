@@ -8,7 +8,8 @@ Priorité :
 
  
 
-
+# faut tester la condition itemIsInHand dans itemScript
+# itemIsInHandScript
 
 
 
@@ -54,3 +55,15 @@ Dans le script
 * 
 
 */
+
+/*
+ * Donc si je résume : 
+ * On veut éviter le fait de pouvoir toucher le numpad lorsque l'on a une canette dans la main
+DOnc pour ca c'est dans le script Raycast de la 47 si le buttonScript != null et que le item n'est pas la main. 
+donc la variable c'est itemIsInHand dans la classe itemScript.
+Du coup je vais sur itemScript, la variable itemIsInHand est public et est false par défaut. 
+Et je vois qu'il n'y a pas de méthode dans le script itemScript pour bouger itemIsInHand en vrai.
+Mais c'est dans le script PlayerScript. 
+Sauf que dans PlayerScript, c'est le bordel
+ *
+ */

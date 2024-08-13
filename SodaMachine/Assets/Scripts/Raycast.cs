@@ -40,11 +40,13 @@ public class Raycast : MonoBehaviour
     {
         ButtonScript buttonScript = hit.transform.GetComponent<ButtonScript>();
         collectingTrayScript = hit.transform.GetComponent<CollectingTrayScript>();
+        ItemScript itemScript = FindObjectOfType<ItemScript>();
 
         if (Input.GetButtonDown("Fire1"))
         {
-            if (buttonScript != null)
+            if (buttonScript != null ) // && ! itemScript.itemIsInHand)
             {
+                Debug.Log("Bla");
                 HandleButtonHit(buttonScript);
                 return;
             }
