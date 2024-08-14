@@ -1,16 +1,15 @@
 using System.Collections;
 using UnityEngine;
 
-public class PlayerScript : MonoBehaviour
+public class Player : MonoBehaviour
 {
-    /*
-     * This script manages the interactions of the player with items
-     * It handles picking up, drinking, and destroying of item
-     * Additionally, it manages audio feedback for actions such as drinking and burping
-     */
 
-    // References to necessary scripts and components
-    private Interface interfaceScript;
+
+    
+    private Interface interfaceRef;
+    // FPS Controller
+    // Hand
+
     private Animator handAnimator;
     private ItemScript itemInHandScript;
     private AudioSource playerAudioSource;
@@ -31,7 +30,7 @@ public class PlayerScript : MonoBehaviour
         playerAudioSource = GetComponent<AudioSource>();
         Transform handTransform = transform.Find("Camera/Hand_R");
         handAnimator = handTransform.GetComponent<Animator>();
-        interfaceScript = FindObjectOfType<Interface>();
+        interfaceRef = FindObjectOfType<Interface>();
 
         if (playerAudioSource == null) { playerAudioSource = gameObject.AddComponent<AudioSource>(); }
     }
@@ -42,18 +41,18 @@ public class PlayerScript : MonoBehaviour
         {
             var raycast = FindObjectOfType<Raycast>();
             raycast.ShootRayFromScreenCenter();
-            ProcessItemInteraction();
+            DrinkingHandle();
         }
     }
 
-    public void ProcessItemInteraction()
+    public void DrinkingHandle()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
             // Handle the burping sound
             if (hasDrunk && !isDrinking)
             {
-                HandleBurping();
+                Burping();
                 return;
             }
 
@@ -61,19 +60,19 @@ public class PlayerScript : MonoBehaviour
             {
                 if (itemInHandScript.itemIsInHand && itemInHandScript.itemIsOpened && !hasDrunk && !isDrinking)
                 {
-                    StartCoroutine(HandleDrinking());
+                    StartCoroutine(Drinking());
                     return;
                 }
 
                 if (itemInHandScript.itemIsInHand && !itemInHandScript.itemIsOpened)
                 {
-                    OpenItem();
+                    Opening();
                 }
             }
         }
     }
 
-    private void HandleBurping()
+    private void Burping()
     {
         if (!hasBurped)
         {
@@ -81,12 +80,9 @@ public class PlayerScript : MonoBehaviour
 
             GetComponent<AudioSource>().PlayOneShot(burpSound);
         }
-        else
-        {
-            Debug.Log("Burp sound has already been played");
-        }
 
-        interfaceScript.ClearText();
+
+        interfaceRef.ClearText();
         hasDrunk = false;
         isDrinking = false;
         hasBurped = false;
@@ -98,17 +94,17 @@ public class PlayerScript : MonoBehaviour
         
     }
 
-    private void OpenItem()
+    private void Opening()
     {
         itemInHandScript.Open();
-        interfaceScript.DisplayDrinkText();
+        interfaceRef.DrinkingText();
         itemInHandScript.itemIsOpened = true;
     }
 
-    private IEnumerator HandleDrinking()
+    private IEnumerator Drinking()
     {
         isDrinking = true;
-        interfaceScript.ClearText();
+        interfaceRef.ClearText();
 
         var m_Animator = GetComponent<Animator>();
         handAnimator.SetTrigger("Drinking");
@@ -116,7 +112,7 @@ public class PlayerScript : MonoBehaviour
 
         hasDrunk = true;
         isDrinking = false;
-        interfaceScript.DisplayBurpText();
+        interfaceRef.BurpingText();
     }
 
     public IEnumerator SpawnInHand(GameObject itemToSpawn) //itemToSpawn = CollectingTrayScript.itemFalled
@@ -146,12 +142,10 @@ public class PlayerScript : MonoBehaviour
 
     public IEnumerator PlayDrinkingSound()
     {
-        Debug.Log("PlayDrinkingSound called");
         yield return new WaitForSeconds(1.5f);
         playerAudioSource.PlayOneShot(drinkingSound);
 
-        yield return new WaitWhile(() => playerAudioSource.isPlaying);
-        Debug.Log("Drinking sound finished");
+        yield return new WaitWhile(() => playerAudioSource.isPlaying);;
     }
 
     private IEnumerator DestroyAfterDelay(float delay, GameObject item)

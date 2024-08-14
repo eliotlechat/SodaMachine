@@ -46,7 +46,6 @@ public class Raycast : MonoBehaviour
         {
             if (buttonScript != null ) // && ! itemScript.itemIsInHand)
             {
-                Debug.Log("Bla");
                 HandleButtonHit(buttonScript);
                 return;
             }
@@ -68,14 +67,12 @@ public class Raycast : MonoBehaviour
 
     private void HandleCollectingTrayHit()
     {
-        interfaceScript.DisplayOpenItemText();
+        interfaceScript.OpeningText();
         collectingTrayScript.OutlinerOff();
 
         if (collectingTrayScript.itemFalled != null)
         {
-            Debug.Log("l'item qui va popper dans ma main est : " + collectingTrayScript.itemFalled.name);
-
-            var playerScript = FindObjectOfType<PlayerScript>();
+            var playerScript = FindObjectOfType<Player>();
             playerScript.StartCoroutine(playerScript.SpawnInHand(collectingTrayScript.itemFalled));
 
             collectingTrayScript.PlayCollectingTrayDoorSound();

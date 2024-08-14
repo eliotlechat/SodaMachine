@@ -22,7 +22,6 @@ public class CardReader : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.gameObject);
         if (other.gameObject.name == "paymentCard" )
         {
             paymentCardDetected = true;

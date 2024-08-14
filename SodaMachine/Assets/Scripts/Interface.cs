@@ -23,21 +23,21 @@ public class Interface : MonoBehaviour
         
     }
 
-    public void DisplayOpenItemText()
+    public void OpeningText()
     {
         actionText.text = "Press E to open";
     }
-    public void DisplayDrinkText()
+    public void DrinkingText()
     {
         actionText.text = "Press E to drink";
     }
 
-    public void DisplayBurpText()
+    public void BurpingText()
     {
         actionText.text = "Press E to burp";
     }
 
-    public void DisplayPaymentText()
+    public void PaymentText()
     {
         actionText.text = "Press E to pay using contactless";
     }

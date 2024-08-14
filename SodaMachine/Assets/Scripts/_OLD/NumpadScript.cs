@@ -42,8 +42,6 @@ public class NumpadScript : MonoBehaviour
 
     public void ButtonsValueCombination()
     {
-        Debug.Log("Le bouton touché correspond à " + buttonVal);
-
         buttonsValList.Add(buttonVal);
         if (buttonsValList.Count == 2)
         {
@@ -54,7 +52,6 @@ public class NumpadScript : MonoBehaviour
             numpadScreen.text = combinationAsString;
             buttonsValList.Clear();
 
-            Debug.Log("The object has been selected");
             StartCoroutine(DisplayItemPriceWithDelay());
         }
     }
@@ -64,7 +61,7 @@ public class NumpadScript : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         numpadScreen.text = itemPrice.ToString();
         isPriceDisplayed = true;
-        interfaceScript.DisplayPaymentText();
+        interfaceScript.PaymentText();
     }
 
     public void ResetScreen()
