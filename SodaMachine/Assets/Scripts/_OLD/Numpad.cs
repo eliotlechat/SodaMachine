@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class NumpadScript : MonoBehaviour
+public class Numpad : MonoBehaviour
 {
-    private MachineScript machineScript;
+    private Machine machineScript;
 
     private Raycast raycast;
     public TMP_Text numpadScreen;
@@ -28,7 +28,7 @@ public class NumpadScript : MonoBehaviour
     private void Start()
     {
         raycast = FindObjectOfType<Raycast>();
-        machineScript = FindObjectOfType<MachineScript>();
+        machineScript = FindObjectOfType<Machine>();
         interfaceScript = FindObjectOfType<Interface>();
     }
 

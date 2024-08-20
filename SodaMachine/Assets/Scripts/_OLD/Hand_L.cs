@@ -8,7 +8,7 @@ public class Hand_L : MonoBehaviour
     private Animator m_Animator;
 
     [SerializeField]
-    private NumpadScript numpadScript;
+    private Numpad numpadScript;
 
     [SerializeField]
     private GameObject paymentCard;

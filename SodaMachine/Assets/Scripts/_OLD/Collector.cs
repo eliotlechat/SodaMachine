@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CollectingTrayScript : MonoBehaviour
+public class Collector : MonoBehaviour
 {
     public bool itemInCollectingTray = false;
 
@@ -17,13 +17,13 @@ public class CollectingTrayScript : MonoBehaviour
 
     Interface interfaceScript;
 
-    MachineScript machineScript;
+    Machine machineScript;
 
     private void Start()
     {
         collectingTrayAudioSource = GetComponent<AudioSource>();
         interfaceScript = FindObjectOfType<Interface>();
-        machineScript = FindObjectOfType<MachineScript>();
+        machineScript = FindObjectOfType<Machine>();
     }
 
     private void OnCollisionEnter(Collision collision)

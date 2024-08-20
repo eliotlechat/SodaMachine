@@ -3,7 +3,7 @@ using UnityEngine;
 public class FallingTriggerScript : MonoBehaviour
 {
     [SerializeField]
-    private MachineScript machineScript;
+    private Machine machineScript;
 
     private void OnTriggerEnter(Collider other)
     {

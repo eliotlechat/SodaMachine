@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ButtonScript : MonoBehaviour
+public class NumpadButton : MonoBehaviour
 {
     private AudioSource buttonAudioSource;
 

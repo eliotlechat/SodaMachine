@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 
-public class MachineScript : MonoBehaviour
+public class Machine : MonoBehaviour
 {
     private float canMovementDistance = 0.001f;
 
@@ -16,7 +16,7 @@ public class MachineScript : MonoBehaviour
     [SerializeField]
     private GameObject stock;
 
-    private NumpadScript numpadScript;
+    private Numpad numpadScript;
     public CardReader cardReader;
 
     private List<GameObject> items = new List<GameObject>();
@@ -25,7 +25,7 @@ public class MachineScript : MonoBehaviour
 
     private void Start()
     {
-        numpadScript = FindObjectOfType<NumpadScript>(); // Pourquoi GetComponent ne marche pas
+        numpadScript = FindObjectOfType<Numpad>(); // Pourquoi GetComponent ne marche pas
         cardReader = FindObjectOfType<CardReader >();
     }
 

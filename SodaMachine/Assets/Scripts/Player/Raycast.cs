@@ -7,18 +7,18 @@ public class Raycast : MonoBehaviour
 
     public RaycastHit hit; // The object hit by the collision
 
-    private NumpadScript numpadScript;
+    private Numpad numpadScript;
     private Interface interfaceScript;
-    private CollectingTrayScript collectingTrayScript;
+    private Collector collectingTrayScript;
 
     public GameObject button { get; private set; } // button of numpad
 
     
     private void Start()
     {
-        numpadScript = FindObjectOfType<NumpadScript>();
+        numpadScript = FindObjectOfType<Numpad>();
         interfaceScript = FindObjectOfType<Interface>();
-        collectingTrayScript = FindObjectOfType<CollectingTrayScript>();
+        collectingTrayScript = FindObjectOfType<Collector>();
         Cursor.lockState = CursorLockMode.Confined;
     }
 
@@ -38,8 +38,8 @@ public class Raycast : MonoBehaviour
 
     private void HandleRaycastHit()
     {
-        ButtonScript buttonScript = hit.transform.GetComponent<ButtonScript>();
-        collectingTrayScript = hit.transform.GetComponent<CollectingTrayScript>();
+        NumpadButton buttonScript = hit.transform.GetComponent<NumpadButton>();
+        collectingTrayScript = hit.transform.GetComponent<Collector>();
         Item itemScript = FindObjectOfType<Item>();
 
         if (Input.GetButtonDown("Fire1"))
@@ -57,7 +57,7 @@ public class Raycast : MonoBehaviour
         }
     }
 
-    private void HandleButtonHit(ButtonScript buttonScript)
+    private void HandleButtonHit(NumpadButton buttonScript)
     {
         button = buttonScript.gameObject;
         buttonScript.PlayButtonBehavior();

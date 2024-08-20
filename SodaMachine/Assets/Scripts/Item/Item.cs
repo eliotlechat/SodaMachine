@@ -31,7 +31,7 @@ public abstract class Item : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.GetComponent<CollectingTrayScript>() != null)
+        if (collision.gameObject.GetComponent<Collector>() != null)
         {
             PlayFallSound();
             
