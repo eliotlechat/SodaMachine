@@ -2556,7 +2556,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8529011698225112767, guid: 61459a582db091e49a6b4e1b36e8fcf3, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2032999508}
+      addedObject: {fileID: 2032999522}
     - targetCorrespondingSourceObject: {fileID: 8529011698225112767, guid: 61459a582db091e49a6b4e1b36e8fcf3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2032999515}
@@ -8786,18 +8786,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8529011698225112767, guid: 61459a582db091e49a6b4e1b36e8fcf3, type: 3}
   m_PrefabInstance: {fileID: 539873867}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2032999508
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2032999500}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be5bc719c084ba5419fed4a19dfe405e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2032999515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8812,6 +8800,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   drinkingSound: {fileID: 8300000, guid: 8d4819094e6f2084292687aecee460b4, type: 3}
   burpSound: {fileID: 8300000, guid: 24d1909a1e1282d4485aa64acd16cc98, type: 3}
+--- !u!114 &2032999522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2032999500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be5bc719c084ba5419fed4a19dfe405e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  raycastOn: 1
 --- !u!1001 &2040691091
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -7,13 +7,18 @@ public class NumpadButton : MonoBehaviour
     [SerializeField]
     private AudioClip soundButton;
 
+    private Numpad numpadScript; 
+
     private void Start()
     {
         buttonAudioSource = GetComponent<AudioSource>();
+        numpadScript = FindObjectOfType<Numpad>();
     }
 
-    public void PlayButtonBehavior()
+    public void HitNumpadButtonBehavior()
     {
         buttonAudioSource.PlayOneShot(soundButton);
+        numpadScript.DisplayButtonValue();
+        numpadScript.ButtonsValueCombination();
     }
 }

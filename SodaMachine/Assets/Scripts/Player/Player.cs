@@ -115,7 +115,7 @@ public class Player : MonoBehaviour
         interfaceRef.BurpingText();
     }
 
-    public IEnumerator SpawnInHand(GameObject itemToSpawn) //itemToSpawn = CollectingTrayScript.itemFalled
+    public IEnumerator SpawnInHand(GameObject itemToSpawn) //itemToSpawn = CollectorScript.itemFalled
     {
         yield return new WaitForSeconds(0.5f);
 
@@ -138,6 +138,8 @@ public class Player : MonoBehaviour
 
         itemInHandScript = itemToSpawn.GetComponent<Item>();
         itemInHandScript.itemIsInHand = true;
+        
+
     }
 
     public IEnumerator PlayDrinkingSound()

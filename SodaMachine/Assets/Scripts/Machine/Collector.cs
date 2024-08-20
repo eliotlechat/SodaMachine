@@ -32,14 +32,20 @@ public class Collector : MonoBehaviour
         OutlinerOn();
         itemInCollectingTray = true;
         interfaceScript.ClearText();
-
         machineScript.cardReader.paymentCardDetected = false;
 
     }
 
-    public void PlayCollectingTrayDoorSound()
+    public void HitCollectorDoorBehavior()
     {
+        interfaceScript.OpeningText();
+        OutlinerOff();
         collectingTrayAudioSource.PlayOneShot(collectingTrayDoorSound);
+        // ??? C'est plutot la main qui interroge si il y a quelque chose dans le collector et le fait apparaitre à la main
+        var playerScript = FindObjectOfType<Player>();
+        playerScript.StartCoroutine(playerScript.SpawnInHand(itemFalled));
+        // ??? 
+        itemInCollectingTray = false;
     }
 
     public void OutlinerOn()

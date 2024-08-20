@@ -7,7 +7,7 @@ public class Numpad : MonoBehaviour
 {
     private Machine machineScript;
 
-    private Raycast raycast;
+    private Raycast raycastScript;
     public TMP_Text numpadScreen;
 
     [HideInInspector]
@@ -27,14 +27,14 @@ public class Numpad : MonoBehaviour
 
     private void Start()
     {
-        raycast = FindObjectOfType<Raycast>();
+        raycastScript = FindObjectOfType<Raycast>();
         machineScript = FindObjectOfType<Machine>();
         interfaceScript = FindObjectOfType<Interface>();
     }
 
     public void DisplayButtonValue()
     {
-        GameObject buttonHit = raycast.button;
+        GameObject buttonHit = raycastScript.Numpadbutton;
         string buttonName = buttonHit.name.ToString();
         numpadScreen.text = buttonName;
         buttonVal = int.Parse(buttonName);

@@ -2,24 +2,24 @@ using UnityEngine;
 
 public class Raycast : MonoBehaviour
 {
-    public bool RaycastOn;
 
+    public bool raycastOn = true;
     private Ray ray;
 
     public RaycastHit hit; // The object hit by the collision
 
     private Numpad numpadScript;
     private Interface interfaceScript;
-    private Collector collectingTrayScript;
+    private Collector collectorScript;
 
-    public GameObject button { get; private set; } // button of numpad
+    public GameObject Numpadbutton { get; private set; } // button of numpad
 
     
     private void Start()
     {
         numpadScript = FindObjectOfType<Numpad>();
         interfaceScript = FindObjectOfType<Interface>();
-        collectingTrayScript = FindObjectOfType<Collector>();
+        collectorScript = FindObjectOfType<Collector>();
         Cursor.lockState = CursorLockMode.Confined;
     }
 
@@ -39,45 +39,26 @@ public class Raycast : MonoBehaviour
 
     private void HandleRaycastHit()
     {
-        NumpadButton buttonScript = hit.transform.GetComponent<NumpadButton>();
-        collectingTrayScript = hit.transform.GetComponent<Collector>();
-        Item itemScript = FindObjectOfType<Item>();
+        
+        Item itemScript = FindObjectOfType<Item>(); 
 
-        if (Input.GetButtonDown("Fire1") && RaycastOn)
+        if (Input.GetButtonDown("Fire1") && raycastOn)
         {
-            if (buttonScript != null ) // && ! itemScript.itemIsInHand)
+            NumpadButton numpadButtonScript = hit.transform.GetComponent<NumpadButton>();
+            collectorScript = hit.transform.GetComponent<Collector>();
+
+            if (numpadButtonScript != null)
             {
-                HandleButtonHit(buttonScript);
+                Numpadbutton = hit.transform.gameObject;  // Met à jour Numpadbutton
+                numpadButtonScript.HitNumpadButtonBehavior();
+                
                 return;
             }
 
-            if (collectingTrayScript != null && collectingTrayScript.itemInCollectingTray)
+            if (collectorScript != null && collectorScript.itemInCollectingTray)
             {
-                HandleCollectingTrayHit();
+                collectorScript.HitCollectorDoorBehavior();
             }
-        }
-    }
-
-    private void HandleButtonHit(NumpadButton buttonScript)
-    {
-        button = buttonScript.gameObject;
-        buttonScript.PlayButtonBehavior();
-        numpadScript.DisplayButtonValue();
-        numpadScript.ButtonsValueCombination();
-    }
-
-    private void HandleCollectingTrayHit()
-    {
-        interfaceScript.OpeningText();
-        collectingTrayScript.OutlinerOff();
-
-        if (collectingTrayScript.itemFalled != null)
-        {
-            var playerScript = FindObjectOfType<Player>();
-            playerScript.StartCoroutine(playerScript.SpawnInHand(collectingTrayScript.itemFalled));
-
-            collectingTrayScript.PlayCollectingTrayDoorSound();
-            collectingTrayScript.itemInCollectingTray = false;
         }
     }
 }
