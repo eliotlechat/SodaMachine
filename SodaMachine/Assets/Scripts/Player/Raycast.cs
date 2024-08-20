@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class Raycast : MonoBehaviour
 {
-    
+    public bool RaycastOn;
+
     private Ray ray;
 
     public RaycastHit hit; // The object hit by the collision
@@ -42,7 +43,7 @@ public class Raycast : MonoBehaviour
         collectingTrayScript = hit.transform.GetComponent<Collector>();
         Item itemScript = FindObjectOfType<Item>();
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && RaycastOn)
         {
             if (buttonScript != null ) // && ! itemScript.itemIsInHand)
             {
