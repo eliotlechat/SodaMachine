@@ -4781,7 +4781,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Animator: {fileID: 967819547}
-  numpadScript: {fileID: 1629331412}
+  numpadScript: {fileID: 1629331415}
   paymentCard: {fileID: 229082364}
 --- !u!95 &967819547
 Animator:
@@ -5085,6 +5085,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 7b7ee395732795a42b86539f212b880c, type: 2}
+    - target: {fileID: -7112595365694506538, guid: c07e4111a1c16c54da7ea0728a262153, type: 3}
+      propertyPath: m_Name
+      value: collector
+      objectReference: {fileID: 0}
     - target: {fileID: -3786468448914542858, guid: c07e4111a1c16c54da7ea0728a262153, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -5252,13 +5256,13 @@ PrefabInstance:
       addedObject: {fileID: 1992875785}
     - targetCorrespondingSourceObject: {fileID: -7112595365694506538, guid: c07e4111a1c16c54da7ea0728a262153, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1992875781}
+      addedObject: {fileID: 1992875789}
     - targetCorrespondingSourceObject: {fileID: 5162820104835090806, guid: c07e4111a1c16c54da7ea0728a262153, type: 3}
       insertIndex: -1
       addedObject: {fileID: 855097177}
     - targetCorrespondingSourceObject: {fileID: -2277216605132090692, guid: c07e4111a1c16c54da7ea0728a262153, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1629331412}
+      addedObject: {fileID: 1629331415}
   m_SourcePrefab: {fileID: 100100000, guid: c07e4111a1c16c54da7ea0728a262153, type: 3}
 --- !u!1 &1040379144 stripped
 GameObject:
@@ -6699,7 +6703,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: -2277216605132090692, guid: c07e4111a1c16c54da7ea0728a262153, type: 3}
   m_PrefabInstance: {fileID: 1038774462}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1629331412
+--- !u!114 &1629331415
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6708,7 +6712,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1629331409}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27d996376b52f2744874a03b4d7d614d, type: 3}
+  m_Script: {fileID: 11500000, guid: eb14e27306ebb9d41ad9ea4713e4bded, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   numpadScreen: {fileID: 1951003900}
@@ -8494,22 +8498,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.4834128, y: 0.013065973, z: 0.15287669}
   m_Center: {x: 0.0009317398, y: 0.020789018, z: 0.06933375}
---- !u!114 &1992875781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1992875768}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c08405e3e42d17d40be7909228131fa7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemInCollectingTray: 0
-  outlineMat: {fileID: 2100000, guid: 7b7ee395732795a42b86539f212b880c, type: 2}
-  itemFalled: {fileID: 0}
-  collectingTrayDoorSound: {fileID: 8300000, guid: 7b656c3b8d5cba9439935fc7d660bdae, type: 3}
 --- !u!82 &1992875785
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8606,6 +8594,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1992875789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992875768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5031cb486f9d2534aab0092006a01574, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemInCollectingTray: 0
+  outlineMat: {fileID: 2100000, guid: 7b7ee395732795a42b86539f212b880c, type: 2}
+  itemFalled: {fileID: 0}
+  collectingTrayDoorSound: {fileID: 8300000, guid: 7b656c3b8d5cba9439935fc7d660bdae, type: 3}
 --- !u!1 &2012697530
 GameObject:
   m_ObjectHideFlags: 0

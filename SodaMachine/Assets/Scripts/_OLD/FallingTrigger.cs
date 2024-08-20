@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class FallingTriggerScript : MonoBehaviour
+public class FallingTrigger : MonoBehaviour
 {
     [SerializeField]
     private Machine machineScript;
