@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Collector : MonoBehaviour
 {
-    public bool itemInCollectingTray = false;
+    public bool itemInCollector = false;
 
     [SerializeField]
     private Material outlineMat;
@@ -10,20 +10,20 @@ public class Collector : MonoBehaviour
     [HideInInspector]
     public GameObject itemFalled; // ajout d'une variable pour stocker l'objet qui est dans le collecteur
 
-    private AudioSource collectingTrayAudioSource;
+    private AudioSource collectorAudioSource;
 
     [SerializeField]
-    private AudioClip collectingTrayDoorSound;
+    private AudioClip collectorDoorSound;
 
     private Numpad numpadScript;
 
-    Interface interfaceScript;
+    private Interface interfaceScript;
 
-    Machine machineScript;
+    private Machine machineScript;
 
     private void Start()
     {
-        collectingTrayAudioSource = GetComponent<AudioSource>();
+        collectorAudioSource = GetComponent<AudioSource>();
         interfaceScript = FindObjectOfType<Interface>();
         machineScript = FindObjectOfType<Machine>();
         numpadScript = FindObjectOfType<Numpad>();
@@ -33,24 +33,23 @@ public class Collector : MonoBehaviour
     {
         itemFalled = collision.gameObject;
         OutlinerOn();
-        itemInCollectingTray = true;
+        itemInCollector = true;
         interfaceScript.ClearText();
         machineScript.cardReader.paymentCardDetected = false;
         // Désactiver tous les boutons du Numpad
         numpadScript.SetButtonsInteractable(false);
-
     }
 
     public void HitCollectorDoorBehavior()
     {
         interfaceScript.OpeningText();
         OutlinerOff();
-        collectingTrayAudioSource.PlayOneShot(collectingTrayDoorSound);
-        // ??? C'est plutot la main qui interroge si il y a quelque chose dans le collector et le fait apparaitre à la main
+        collectorAudioSource.PlayOneShot(collectorDoorSound);
+
         var playerScript = FindObjectOfType<Player>();
         playerScript.StartCoroutine(playerScript.SpawnInHand(itemFalled));
-        // ??? 
-        itemInCollectingTray = false;
+
+        itemInCollector = false;
     }
 
     public void OutlinerOn()

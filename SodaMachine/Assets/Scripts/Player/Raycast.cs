@@ -55,7 +55,7 @@ public class Raycast : MonoBehaviour
                 return;
             }
 
-            if (collectorScript != null && collectorScript.itemInCollectingTray)
+            if (collectorScript != null && collectorScript.itemInCollector)
             {
                 collectorScript.HitCollectorDoorBehavior();
             }
