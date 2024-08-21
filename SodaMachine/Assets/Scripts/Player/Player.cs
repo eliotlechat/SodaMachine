@@ -91,6 +91,8 @@ public class Player : MonoBehaviour
             StartCoroutine(DestroyAfterDelay(1.0f, itemInHandScript.gameObject));
         }
         numpadScript.SetButtonsInteractable(true);
+        Machine machineScript = FindObjectOfType<Machine>();
+        machineScript.hasBeenPaid = false;
 
     }
 
