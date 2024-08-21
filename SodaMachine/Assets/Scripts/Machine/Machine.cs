@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Machine : MonoBehaviour
 {
+    public bool hasBeenPaid = false;
+
     private float canMovementDistance = 0.001f;
 
     [HideInInspector]
@@ -51,7 +53,7 @@ public class Machine : MonoBehaviour
     private void MoveItems()
     {
         
-        if (itemsMovable && foundItem != null && cardReader.paymentCardDetected)
+        if (itemsMovable && foundItem != null && hasBeenPaid)
         {
             
             foreach (Transform child in foundItem.transform)

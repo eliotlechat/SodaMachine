@@ -11,6 +11,8 @@ public class CardReader : MonoBehaviour
         if (other.gameObject.name == "paymentCard")
         {
             paymentCardDetected = true;
+            Machine machineScript = FindObjectOfType<Machine>();
+            machineScript.hasBeenPaid = true;
         }
     }
 }
