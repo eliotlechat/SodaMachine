@@ -35,7 +35,6 @@ public class Collector : MonoBehaviour
         OutlinerOn();
         itemInCollector = true;
         interfaceScript.ClearText();
-        machineScript.cardReader.paymentCardDetected = false;
         // Désactiver tous les boutons du Numpad
         numpadScript.SetButtonsInteractable(false);
     }
