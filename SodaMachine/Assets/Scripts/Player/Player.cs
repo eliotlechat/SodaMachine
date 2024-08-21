@@ -7,9 +7,6 @@ public class Player : MonoBehaviour
 
     
     private Interface interfaceRef;
-    // FPS Controller
-    // Hand
-
     private Animator handAnimator;
     private Item itemInHandScript;
     private AudioSource playerAudioSource;
@@ -25,8 +22,10 @@ public class Player : MonoBehaviour
     private bool isDrinking = false;
     private bool hasBurped = false;
 
+    Numpad numpadScript;
     private void Start()
     {
+        numpadScript = FindObjectOfType<Numpad>();
         playerAudioSource = GetComponent<AudioSource>();
         Transform handTransform = transform.Find("Camera/Hand_R");
         handAnimator = handTransform.GetComponent<Animator>();
@@ -91,7 +90,8 @@ public class Player : MonoBehaviour
         {
             StartCoroutine(DestroyAfterDelay(1.0f, itemInHandScript.gameObject));
         }
-        
+        numpadScript.SetButtonsInteractable(true);
+
     }
 
     private void Opening()
@@ -113,6 +113,7 @@ public class Player : MonoBehaviour
         hasDrunk = true;
         isDrinking = false;
         interfaceRef.BurpingText();
+        
     }
 
     public IEnumerator SpawnInHand(GameObject itemToSpawn) //itemToSpawn = CollectorScript.itemFalled

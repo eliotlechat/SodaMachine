@@ -72,4 +72,17 @@ public class Numpad : MonoBehaviour
         combination = 0;
         isCombinationFormed = false;
     }
+
+    public void SetButtonsInteractable(bool interactable)
+    {
+        NumpadButton[] allButtons = FindObjectsOfType<NumpadButton>();
+        foreach (var button in allButtons)
+        {
+            Collider buttonCollider = button.GetComponent<Collider>();
+            if (buttonCollider != null)
+            {
+                buttonCollider.enabled = interactable;
+            }
+        }
+    }
 }

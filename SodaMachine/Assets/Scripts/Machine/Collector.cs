@@ -15,6 +15,8 @@ public class Collector : MonoBehaviour
     [SerializeField]
     private AudioClip collectingTrayDoorSound;
 
+    private Numpad numpadScript;
+
     Interface interfaceScript;
 
     Machine machineScript;
@@ -24,6 +26,7 @@ public class Collector : MonoBehaviour
         collectingTrayAudioSource = GetComponent<AudioSource>();
         interfaceScript = FindObjectOfType<Interface>();
         machineScript = FindObjectOfType<Machine>();
+        numpadScript = FindObjectOfType<Numpad>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -33,6 +36,8 @@ public class Collector : MonoBehaviour
         itemInCollectingTray = true;
         interfaceScript.ClearText();
         machineScript.cardReader.paymentCardDetected = false;
+        // Désactiver tous les boutons du Numpad
+        numpadScript.SetButtonsInteractable(false);
 
     }
 
