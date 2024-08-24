@@ -52,9 +52,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8336737105407048987, guid: b43d57adfa5634f4f82bf9d11c157072, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a28114e5534f5d64d8ead4f8175fb795, type: 2}
     - target: {fileID: 8747941888382128842, guid: b43d57adfa5634f4f82bf9d11c157072, type: 3}
       propertyPath: m_Name
-      value: coca Variant
+      value: Sprite Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

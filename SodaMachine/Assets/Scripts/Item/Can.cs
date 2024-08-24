@@ -30,6 +30,10 @@ public class Can : Item
 
             tabAnimator.SetTrigger("OpenTab");
 
+            Transform infTab = transform.Find("inf_tab");
+
+            infTab.gameObject.SetActive(false);
+
             particleSystem.Play();
 
             itemIsOpened = true;

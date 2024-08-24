@@ -2,16 +2,12 @@
  
 UPDATES :
 
-- prix des items à afficher sur le distri
-- canettes textures
-- carte texture
-_ bouteilles d'eau, Breizh cola
-- Animer l'opercule inferieur 
-- canette n'a pas de hole 
+
+
 _ Commenter au début de chaque script
-- lightmapping 
+
 - son de la machine qui travaille 
-- bug de la canette qui sort du collector 
+- créer boisson evian
 
 
 - une build ou fix le problème de la souris
@@ -31,6 +27,7 @@ _ Commenter au début de chaque script
 /*
  * 
  NOTIONS APPRISES : 
+* créer un repo sur github.
 * Les méthodes et paramètres
 * La différence entre paramètre et arguments. 
 * référencer un objet 

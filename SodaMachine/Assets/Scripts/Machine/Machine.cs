@@ -49,7 +49,7 @@ public class Machine : MonoBehaviour
                 // Get price of item and convert float to string
                 MachineStack machineStackScript = foundItem.GetComponent<MachineStack>();
                 float price = machineStackScript.price;
-                priceOfSelectedItem = price.ToString("F2").Replace(",","€ ");
+                priceOfSelectedItem = price.ToString("F2") + "€";
 
             }
 

@@ -8,10 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4560614201976319934, guid: b43d57adfa5634f4f82bf9d11c157072, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7090375264997831455, guid: b43d57adfa5634f4f82bf9d11c157072, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: d757908b4c39b2b43b95895aab6d7eb2, type: 2}
+      objectReference: {fileID: 2100000, guid: 39fafe436b7b6d44995aefc5d1064c2e, type: 2}
     - target: {fileID: 8227300676824631408, guid: b43d57adfa5634f4f82bf9d11c157072, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -52,9 +56,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8336737105407048987, guid: b43d57adfa5634f4f82bf9d11c157072, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 39fafe436b7b6d44995aefc5d1064c2e, type: 2}
     - target: {fileID: 8747941888382128842, guid: b43d57adfa5634f4f82bf9d11c157072, type: 3}
       propertyPath: m_Name
-      value: coca Variant
+      value: BreizhCola
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
