@@ -13,9 +13,15 @@ public class Numpad : MonoBehaviour
     [HideInInspector]
     public int combination;
 
+    public bool combinationIsValid;
+
     public bool isPriceDisplayed = false;
 
     private int buttonVal;
+
+    
+
+    
 
     private List<int> buttonsValList = new List<int>();
 
@@ -44,6 +50,16 @@ public class Numpad : MonoBehaviour
         if (buttonsValList.Count == 2)
         {
             combination = buttonsValList[0] * 10 + buttonsValList[1];
+
+            if (combination > 66 || buttonsValList[1] == 0 || buttonsValList[1] >= 7)
+            {
+                combinationIsValid = false;
+            }
+            else
+            {
+                combinationIsValid = true;
+            }
+
             string combinationAsString = combination.ToString();
 
             machineScript.StackSearch();
@@ -53,13 +69,6 @@ public class Numpad : MonoBehaviour
 
             StartCoroutine(DisplayItemPriceWithDelay());
 
-            // COMBINAISON AUTHORISE VS NON 
-            // si la combinaison est plus de 66 
-            //   et si la dizaine contient 0,7,8,9
-            //   alors la combianison est non authorized. 
-
-
-            // On liste tous les 
         }
     }
 
@@ -67,9 +76,20 @@ public class Numpad : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         Machine machineScript = FindObjectOfType<Machine>();
-        numpadScreen.text = machineScript.priceOfSelectedItem;
-        isPriceDisplayed = true;
-        interfaceScript.PaymentText();
+
+        if (combinationIsValid == true)
+        {
+            numpadScreen.text = machineScript.priceOfSelectedItem;
+            isPriceDisplayed = true;
+            interfaceScript.PaymentText();
+        }
+
+        else
+        {
+            numpadScreen.text = "Error";
+        }
+
+
     }
 
     public void ResetScreen()
