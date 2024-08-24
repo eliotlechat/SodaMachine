@@ -1,35 +1,20 @@
 /* 
  
-Priorité : 
-
-
-
-* Corriger les BUGS
-* Je peux tjrs interagir avec les boutons alors que j'ai un objet à la main. Est ce 
-que c'est pas une erreur de renommer itemInHanScript. j'ai l'impressiosn que ca fait brouillon
-
- 
-
-# faut tester la condition itemIsInHand dans itemScript
-# itemIsInHandScript
-
-
-
 UPDATES :
 
-_ Comprendre les listes pour les boissons et gérer les différents montants . Le violet sera le plus cher
-_ bouteilles d'eau, paquet de chips, 
-_ Commenter au départ
+- prix des items à afficher sur le distri
+- canettes textures
+- carte texture
+_ bouteilles d'eau, Breizh cola
+- Animer l'opercule inferieur 
+- canette n'a pas de hole 
+_ Commenter au début de chaque script
+- lightmapping 
+- son de la machine qui travaille 
+- bug de la canette qui sort du collector 
 
-BUGS : 
 
-
-* Quand j'ai un objet à la main, je peux interagir avec la Machine.
-* Bug lorsqu'on selectionne une boisson +66
- 
-Animer l'opercule inferieur 
-
-Dans le script 
+- une build ou fix le problème de la souris
 
 */
 
@@ -39,33 +24,32 @@ Dans le script
 * Agrandir la hauteur des étagères 
 * Repenser le distributeur, il y a un problème déjà je pense qu'il faut agrandir l'espacement
 * et mettre des colliders sur les côtés. DIMINUER LES TABLETTES SURTOUT
-* Créer des bouteilles d'eau
-* La canette n'a pas de hole
-* Les canettes ont tous la meme textures.
-* La carte n'a pas de textures
-* il n'y a pas d'étiquettes de numéro sur clavier
+
 */
 
-// Je pense qu'avant je dois comprendre les unity events et les accesseurs. les design patterns ("singletons").
+
 /*
+ * 
  NOTIONS APPRISES : 
 * Les méthodes et paramètres
- * La différence entre paramètre et arguments. 
+* La différence entre paramètre et arguments. 
 * référencer un objet 
 * Instancier un objet. 
+* comment faire communiquer avec l'autre objet. 
 * Les TMP
-* 
 
+ LES DIFFICULTES RENCONTREES
+// encore un peu du mal avec l'architecture, c'est pas tout a fait acquis
+// savoir bien nommer mes variables, mes fonctions
+// et l'encapsulation. 
+// j'ai aborder la hierarchie mais je suis pas à l'aise
+// la physique qu'il faut que je comprenne mieux. notamment en vr. 
+// et les protections qui n'est pas un automatisme. d'ailleurs sur ce projet j'en ai pas mis
+// pour pas trop alourdir l'apprentissage 
+// difficultés à refactorer du code spaghetti.
+
+ NOTIONS A APPRONFIR EN PLUS 
+*  unity events 
+*  accesseurs. 
+*  les design patterns ("singletons").
 */
-
-/*
- * Donc si je résume : 
- * On veut éviter le fait de pouvoir toucher le numpad lorsque l'on a une canette dans la main
-DOnc pour ca c'est dans le script Raycast de la 47 si le buttonScript != null et que le item n'est pas la main. 
-donc la variable c'est itemIsInHand dans la classe itemScript.
-Du coup je vais sur itemScript, la variable itemIsInHand est public et est false par défaut. 
-Et je vois qu'il n'y a pas de méthode dans le script itemScript pour bouger itemIsInHand en vrai.
-Mais c'est dans le script PlayerScript. 
-Sauf que dans PlayerScript, c'est le bordel
- *
- */
