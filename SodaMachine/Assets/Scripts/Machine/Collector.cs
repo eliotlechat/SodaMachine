@@ -19,13 +19,11 @@ public class Collector : MonoBehaviour
 
     private Interface interfaceScript;
 
-    private Machine machineScript;
 
     private void Start()
     {
         collectorAudioSource = GetComponent<AudioSource>();
         interfaceScript = FindObjectOfType<Interface>();
-        machineScript = FindObjectOfType<Machine>();
         numpadScript = FindObjectOfType<Numpad>();
     }
 

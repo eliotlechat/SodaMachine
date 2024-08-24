@@ -7,6 +7,8 @@ public class MachineStack : MonoBehaviour
     [SerializeField]
     GameObject stackItem;
     
+    public float price = 2.3f;
+    
     void Start()
     {
         InstantiateCansStack();

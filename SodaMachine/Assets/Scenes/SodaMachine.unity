@@ -2544,6 +2544,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
+    - {fileID: 0}
     - {fileID: 4277538020460174840, guid: 61459a582db091e49a6b4e1b36e8fcf3, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -2614,7 +2615,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9159f65f85dd71d4c82b97e5e8c7fcbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  paymentCardDetected: 0
 --- !u!65 &548046496
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4054,6 +4054,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54dca60c222dbf942816b004d6319413, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasBeenPaid: 0
   itemsMovable: 0
   stock: {fileID: 1506476437}
   cardReader: {fileID: 0}
@@ -8606,10 +8607,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5031cb486f9d2534aab0092006a01574, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemInCollectingTray: 0
+  itemInCollector: 0
   outlineMat: {fileID: 2100000, guid: 7b7ee395732795a42b86539f212b880c, type: 2}
   itemFalled: {fileID: 0}
-  collectingTrayDoorSound: {fileID: 8300000, guid: 7b656c3b8d5cba9439935fc7d660bdae, type: 3}
+  collectorDoorSound: {fileID: 8300000, guid: 7b656c3b8d5cba9439935fc7d660bdae, type: 3}
 --- !u!1 &2012697530
 GameObject:
   m_ObjectHideFlags: 0

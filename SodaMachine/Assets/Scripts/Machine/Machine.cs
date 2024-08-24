@@ -23,12 +23,10 @@ public class Machine : MonoBehaviour
 
     private List<GameObject> items = new List<GameObject>();
 
-
-
     private void Start()
     {
         numpadScript = FindObjectOfType<Numpad>(); // Pourquoi GetComponent ne marche pas
-        cardReader = FindObjectOfType<CardReader >();
+        cardReader = FindObjectOfType<CardReader>();
     }
 
     private void Update()
@@ -45,28 +43,29 @@ public class Machine : MonoBehaviour
             {
                 foundItem = item;
 
-            }
+                
+                MachineStack machineStackScript = foundItem.GetComponent<MachineStack>();
+                float priceOfFoundItem = machineStackScript.price;
+                
+                
+                // après on converti le priceInFloat en priceInString. 
+                // et on remplace le . en €
+                // et on affiche le montant quand il est selectionné.
 
+                // pour contraindre il faudrait séparer les combinaisons ok et les combinaisons non Ok
+            }
         }
     }
 
     private void MoveItems()
     {
-        
         if (itemsMovable && foundItem != null && hasBeenPaid)
         {
-            
             foreach (Transform child in foundItem.transform)
 
             {
                 child.transform.Translate(Vector3.forward * canMovementDistance);
             }
-
-            
         }
-
-        
     }
-
-    
 }
