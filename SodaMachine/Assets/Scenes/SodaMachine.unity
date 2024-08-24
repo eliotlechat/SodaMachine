@@ -3315,6 +3315,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2988997271214146287, guid: 6d4bfcfa84d454246805204415f6d5b1, type: 3}
     - target: {fileID: 6190350586506854556, guid: ed9f2aacb8d860c4981623458915478e, type: 3}
+      propertyPath: price
+      value: 1.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190350586506854556, guid: ed9f2aacb8d860c4981623458915478e, type: 3}
       propertyPath: stackItem
       value: 
       objectReference: {fileID: 2988997271214146287, guid: 6d4bfcfa84d454246805204415f6d5b1, type: 3}
@@ -4056,6 +4060,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasBeenPaid: 0
   itemsMovable: 0
+  priceOfSelectedItem: 
   stock: {fileID: 1506476437}
   cardReader: {fileID: 0}
 --- !u!82 &813242373
@@ -5001,6 +5006,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2988997271214146287, guid: 6d4bfcfa84d454246805204415f6d5b1, type: 3}
     - target: {fileID: 6190350586506854556, guid: ed9f2aacb8d860c4981623458915478e, type: 3}
+      propertyPath: price
+      value: 1.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190350586506854556, guid: ed9f2aacb8d860c4981623458915478e, type: 3}
       propertyPath: stackItem
       value: 
       objectReference: {fileID: 2988997271214146287, guid: 6d4bfcfa84d454246805204415f6d5b1, type: 3}
@@ -5924,6 +5933,10 @@ PrefabInstance:
       propertyPath: item
       value: 
       objectReference: {fileID: 2988997271214146287, guid: 6d4bfcfa84d454246805204415f6d5b1, type: 3}
+    - target: {fileID: 6190350586506854556, guid: ed9f2aacb8d860c4981623458915478e, type: 3}
+      propertyPath: price
+      value: 1.9
+      objectReference: {fileID: 0}
     - target: {fileID: 6190350586506854556, guid: ed9f2aacb8d860c4981623458915478e, type: 3}
       propertyPath: stackItem
       value: 
@@ -7642,6 +7655,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2988997271214146287, guid: 6d4bfcfa84d454246805204415f6d5b1, type: 3}
     - target: {fileID: 6190350586506854556, guid: ed9f2aacb8d860c4981623458915478e, type: 3}
+      propertyPath: price
+      value: 1.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190350586506854556, guid: ed9f2aacb8d860c4981623458915478e, type: 3}
       propertyPath: stackItem
       value: 
       objectReference: {fileID: 2988997271214146287, guid: 6d4bfcfa84d454246805204415f6d5b1, type: 3}
@@ -7711,6 +7728,10 @@ PrefabInstance:
       propertyPath: item
       value: 
       objectReference: {fileID: 2988997271214146287, guid: 6d4bfcfa84d454246805204415f6d5b1, type: 3}
+    - target: {fileID: 6190350586506854556, guid: ed9f2aacb8d860c4981623458915478e, type: 3}
+      propertyPath: price
+      value: 1.9
+      objectReference: {fileID: 0}
     - target: {fileID: 6190350586506854556, guid: ed9f2aacb8d860c4981623458915478e, type: 3}
       propertyPath: stackItem
       value: 
@@ -9220,6 +9241,10 @@ PrefabInstance:
       propertyPath: item
       value: 
       objectReference: {fileID: 2988997271214146287, guid: 6d4bfcfa84d454246805204415f6d5b1, type: 3}
+    - target: {fileID: 6190350586506854556, guid: ed9f2aacb8d860c4981623458915478e, type: 3}
+      propertyPath: price
+      value: 1.9
+      objectReference: {fileID: 0}
     - target: {fileID: 6190350586506854556, guid: ed9f2aacb8d860c4981623458915478e, type: 3}
       propertyPath: stackItem
       value: 

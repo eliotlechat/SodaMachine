@@ -15,8 +15,6 @@ public class Numpad : MonoBehaviour
 
     public bool isPriceDisplayed = false;
 
-    private const float itemPrice = 2.30f;
-
     private int buttonVal;
 
     private List<int> buttonsValList = new List<int>();
@@ -47,19 +45,29 @@ public class Numpad : MonoBehaviour
         {
             combination = buttonsValList[0] * 10 + buttonsValList[1];
             string combinationAsString = combination.ToString();
+
             machineScript.StackSearch();
             machineScript.itemsMovable = true;
             numpadScreen.text = combinationAsString;
             buttonsValList.Clear();
 
             StartCoroutine(DisplayItemPriceWithDelay());
+
+            // COMBINAISON AUTHORISE VS NON 
+            // si la combinaison est plus de 66 
+            //   et si la dizaine contient 0,7,8,9
+            //   alors la combianison est non authorized. 
+
+
+            // On liste tous les 
         }
     }
 
     private IEnumerator DisplayItemPriceWithDelay()
     {
         yield return new WaitForSeconds(0.5f);
-        numpadScreen.text = itemPrice.ToString();
+        Machine machineScript = FindObjectOfType<Machine>();
+        numpadScreen.text = machineScript.priceOfSelectedItem;
         isPriceDisplayed = true;
         interfaceScript.PaymentText();
     }

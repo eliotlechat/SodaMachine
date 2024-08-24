@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
+using System.Globalization;
 
 public class Machine : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class Machine : MonoBehaviour
 
     private Transform foundItem;
 
+    public string priceOfSelectedItem;
+
     [SerializeField]
     private GameObject stock;
 
@@ -25,7 +28,7 @@ public class Machine : MonoBehaviour
 
     private void Start()
     {
-        numpadScript = FindObjectOfType<Numpad>(); // Pourquoi GetComponent ne marche pas
+        numpadScript = FindObjectOfType<Numpad>(); 
         cardReader = FindObjectOfType<CardReader>();
     }
 
@@ -33,7 +36,7 @@ public class Machine : MonoBehaviour
     {
         MoveItems();
     }
-
+    
     public void StackSearch()
     {
         input = numpadScript.combination;
@@ -43,17 +46,18 @@ public class Machine : MonoBehaviour
             {
                 foundItem = item;
 
-                
+                // Get price of item and convert float to string
                 MachineStack machineStackScript = foundItem.GetComponent<MachineStack>();
-                float priceOfFoundItem = machineStackScript.price;
-                
-                
-                // après on converti le priceInFloat en priceInString. 
-                // et on remplace le . en €
-                // et on affiche le montant quand il est selectionné.
+                float price = machineStackScript.price;
+                priceOfSelectedItem = price.ToString("F2").Replace(",","€ ");
 
-                // pour contraindre il faudrait séparer les combinaisons ok et les combinaisons non Ok
             }
+
+            else
+            {
+                Debug.LogWarning("MachineStack component not found on the selected item");
+            }
+
         }
     }
 
