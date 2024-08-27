@@ -8,8 +8,6 @@ public class Raycast : MonoBehaviour
 
     public RaycastHit hit; // The object hit by the collision
 
-    private Numpad numpadScript;
-    private Interface interfaceScript;
     private Collector collectorScript;
 
     public GameObject Numpadbutton { get; private set; } // button of numpad
@@ -17,8 +15,6 @@ public class Raycast : MonoBehaviour
     
     private void Start()
     {
-        numpadScript = FindObjectOfType<Numpad>();
-        interfaceScript = FindObjectOfType<Interface>();
         collectorScript = FindObjectOfType<Collector>();
         Cursor.lockState = CursorLockMode.Confined;
     }
@@ -29,8 +25,9 @@ public class Raycast : MonoBehaviour
         Vector2 screenCenterPoint = new Vector2(Screen.width / 2, Screen.height / 2);
         ray = Camera.main.ScreenPointToRay(screenCenterPoint);
 
-        
-        if (Physics.Raycast(ray, out hit, Camera.main.farClipPlane))
+        Debug.DrawRay(ray.origin, ray.direction * 10f, Color.red, 2.0f);
+
+        if (Physics.Raycast(ray, out hit, 10f))
         {
             
             HandleRaycastHit();

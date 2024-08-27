@@ -1,5 +1,17 @@
 /* 
  
+BUGS Klervia : 
+
+
+
+
+_ mettre un texte pour ramasser l'objet dans le collector. 
+_ Il y a des étapes qu'elle squize, du coup ca stuck le simu. Par exemple, si elle fait 
+pas bien la bonne procédure. 
+_ il y a des sons parasite lorsqu'elle appuie sur la touche E. un bruit de knock.
+_ on peut jouer 2x le drinking et le rot alors que non 
+
+
 UPDATES :
 
 
